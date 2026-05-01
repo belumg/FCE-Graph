@@ -1,0 +1,133 @@
+[
+    {
+        "codigo": 1,
+        "materia": "Análisis Matemático",
+	    "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": []
+    },
+    {
+        "codigo": 2,
+        "materia": "Álgebra",
+	    "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 3,
+        "materia": "Trabajo y Sociedad",
+	    "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 4,
+        "materia": "Estadística",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 5,
+        "materia": "Fundamentos de Sistemas de Información Digitales",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 6,
+        "materia": "Laboratorio de Métodos Cuantitativos Aplicados a la Gestión",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 7,
+        "materia": "Métodos Predictivos para la Gestión",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+            4,
+            6
+        ]
+    },
+    {
+        "codigo": 8,
+        "materia": "Diseño y Gestión de Bases de Datos",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            5,
+            6
+        ]
+    },
+    {
+        "codigo": 9,
+        "materia": "Taller de Programación para el Análisis de Datos",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+            4,
+            6
+        ]
+    },
+    {
+        "codigo": 10,
+        "materia": "Soluciones de Inteligencia de Negocios y Analítica de Datos",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            7,
+            8,
+            9
+        ]
+    },
+    {
+        "codigo": 11,
+        "materia": "Técnicas de Gestión y Análisis de Datos No Estructurados",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+            7,
+            8,
+            9
+        ]
+    },
+    {
+        "codigo": 12,
+        "materia": "Técnicas de Inteligencia Artificial en Organizaciones",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+            7,
+            8,
+            9
+        ]
+    },
+    {
+        "codigo": 13,
+        "materia": "Prácticas Profesionalizantes",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 14,
+        "correlativas": [
+            10,
+            11
+        ]
+    }
+]

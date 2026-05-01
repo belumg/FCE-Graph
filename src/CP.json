@@ -1,0 +1,595 @@
+[
+    {
+        "codigo": 241,
+        "materia": "Análisis Matemático I",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": []
+    },
+    {
+        "codigo": 242,
+        "materia": "Economía",
+        "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 243,
+        "materia": "Sociología",
+        "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 244,
+        "materia": "Metodología de las Ciencias Sociales",
+        "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 245,
+        "materia": "Álgebra",
+        "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 246,
+        "materia": "Historia Económica y Social General",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+	{
+        "codigo": 248,
+        "materia": "Estadística I",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+	{
+        "codigo": 252,
+        "materia": "Administración General",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+	{
+        "codigo": 249,
+        "materia": "Historia Económica y Social Argentina",
+		"categoria": "Segundo Tramo",
+		"caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 250,
+        "materia": "Microeconomía I",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 251,
+        "materia": "Instituciones de Derecho Público",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+	{
+        "codigo": 247,
+        "materia": "Teoría Contable",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 273,
+        "materia": "Instituciones de Derecho Privado",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            1359
+        ]
+    },
+    {
+        "codigo": 274,
+        "materia": "Sistemas Administrativos",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            252
+        ]
+    },
+    {
+        "codigo": 275,
+        "materia": "Tecnología de la Información",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+            274
+        ]
+    },
+    {
+        "codigo": 276,
+        "materia": "Cálculo Financiero",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            248
+        ]
+    },
+    {
+        "codigo": 278,
+        "materia": "Macroeconomía y Política Económica",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 279,
+        "materia": "Administración Financiera",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+            276
+        ]
+    },
+    {
+        "codigo": 351,
+        "materia": "Sistemas Contables",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+            247
+        ]
+    },
+    {
+        "codigo": 353,
+        "materia": "Sistemas de Costos",
+        "categoria": "Ciclo Profesional",
+		"caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            247
+        ]
+    },
+    {
+        "codigo": 354,
+        "materia": "Derecho del Trabajo y la Seguridad Social",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+			251,
+			1359
+		]
+    },
+    {
+        "codigo": 355,
+        "materia": "Auditoría",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+			362,
+			1352
+		]
+    },
+    {
+        "codigo": 356,
+        "materia": "Teoría y Técnica Impositiva I",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+			251,
+			1352
+		]
+    },
+    {
+        "codigo": 357,
+        "materia": "Teoría y Técnica Impositiva II",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+            356
+        ]
+    },
+    {
+        "codigo": 362,
+        "materia": "Gestión y Costos para Contadores",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+            353
+        ]
+    },
+    {
+        "codigo": 1330,
+        "materia": "Contabilidad Social y Ambiental",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 2,
+        "correlativas": [
+            1352
+        ]
+    },
+    {
+        "codigo": 1352,
+        "materia": "Contabilidad Financiera",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+			351,
+			353
+		]
+    },
+    {
+        "codigo": 1359,
+        "materia": "Derecho Económico",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 1360,
+        "materia": "Derecho Crediticio, Bursátil e Insolvencia",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+			273, 354
+		]
+    },
+    {
+        "codigo": 1374,
+        "materia": "Contabilidad Gubernamental y Control de Gestión",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+			278,
+			1352
+		]
+    },
+    {
+        "codigo": "#1",
+        "materia": "ELECTIVA u OPTATIVA",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 1358,
+        "materia": "Taller de Actuación Profesional Judicial",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+			355,
+			1360
+		]
+    },
+    {
+        "codigo": 1361,
+        "materia": "Taller de Práctica Profesional en Organizaciones",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "",
+        "hs_semanales": 6,
+        "correlativas": [
+            273,
+            279,
+            355,
+            1330
+        ]
+    },
+    {
+        "codigo": 721,
+        "materia": "Poder Económico y Derechos Humanos",
+        "caracter": "Electiva",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 749,
+        "materia": "Administración de la Salud",
+        "caracter": "Electiva",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            274
+        ]
+    },
+    {
+        "codigo": 764,
+        "materia": "Gestión en la Economía Social",
+        "caracter": "Electiva",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            274
+        ]
+    },
+    {
+        "codigo": 768,
+        "materia": "Finanzas Públicas",
+        "caracter": "Electiva",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            362
+        ]
+    },
+    {
+        "codigo": 775,
+        "materia": "Seminario de Sindicatura Concursal",
+        "caracter": "Electiva",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            357
+        ]
+    },
+    {
+        "codigo": 776,
+        "materia": "Planeamiento y Control Presupuestario",
+        "caracter": "Electiva",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            1352
+        ]
+    },
+    {
+        "codigo": 786,
+        "materia": "Derecho de Seguros",
+        "caracter": "Electiva",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            276
+        ]
+    },
+    {
+        "codigo": 794,
+        "materia": "Administración Pública",
+        "caracter": "Electiva",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            362
+        ]
+    },
+    {
+        "codigo": 1708,
+        "materia": "Economía y Delito",
+        "caracter": "Electiva",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 1798,
+        "materia": "Contabilidad Financiera Superior",
+        "caracter": "Electiva",
+        "departamento": "",
+        "hs_semanales": 4,
+        "correlativas": [
+            279
+        ]
+    },
+    {
+        "codigo": 479,
+        "materia": "Negocios Internacionales (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 482,
+        "materia": "Gestión Estratégica para la Transformación Social (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 484,
+        "materia": "Oratoria (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 702,
+        "materia": "Auditoría de Sistemas de Información (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 704,
+        "materia": "Auditorías Especiales (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Contabilidad",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 706,
+        "materia": "Marketing Digital (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 707,
+        "materia": "Negociación (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 709,
+        "materia": "Derecho Procesal -Recursos- (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Derecho",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 711,
+        "materia": "Tributación en el Sector Agropecuario (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Tributación",
+        "hs_semanales": 6,
+        "correlativas": []
+    },
+    {
+        "codigo": 719,
+        "materia": "Gestión de Políticas Públicas (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 732,
+        "materia": "Administración de Turismo (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 744,
+        "materia": "Actuación del Contador en Prevención de Corrupción y Lavado de Activos (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Contabilidad",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 750,
+        "materia": "Métodos Cuantitativos (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 769,
+        "materia": "Procedimiento Contencioso Administrativo y Fiscal (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Tributación",
+        "hs_semanales": 4,
+        "correlativas": [
+            251,
+            357
+        ]
+    },
+    {
+        "codigo": 770,
+        "materia": "Seminario Avanzado de Costos (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Contabilidad",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 791,
+        "materia": "Seminario Ética de las Ocupaciones (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 795,
+        "materia": "Conducción de Equipos de Trabajo (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 800,
+        "materia": "Procedimientos Presupuestarios y Parlamentarios (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Contabilidad",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 1799,
+        "materia": "Gestión de Recursos Informáticos (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": []
+    }
+]

@@ -1,0 +1,371 @@
+[
+    {
+        "codigo": 241,
+        "materia": "Análisis Matemático I",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": []
+    },
+    {
+        "codigo": 242,
+        "materia": "Economía",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 245,
+        "materia": "Álgebra",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 246,
+        "materia": "Historia Económica y Social General",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 252,
+        "materia": "Administración General",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 254,
+        "materia": "Sociología de las Organizaciones",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 247,
+        "materia": "Teoría Contable",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Contabilidad",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 248,
+        "materia": "Estadística I",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 249,
+        "materia": "Historia Económica y Social Argentina",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 250,
+        "materia": "Microeconomía I",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 274,
+        "materia": "Sistemas Administrativos",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 276,
+        "materia": "Cálculo Financiero",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 278,
+        "materia": "Macroeconomía y Política Económica",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 279,
+        "materia": "Administración Financiera",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": [
+            276
+        ]
+    },
+    {
+        "codigo": 464,
+        "materia": "Gestión de Costos",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Contabilidad",
+        "hs_semanales": 4,
+        "correlativas": [
+            247
+        ]
+    },
+    {
+        "codigo": 655,
+        "materia": "Tecnología de Comunicaciones",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": [
+            1653
+        ]
+    },
+    {
+        "codigo": 658,
+        "materia": "Metodología de los Sistemas de Información",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 6,
+        "correlativas": [
+            1601
+        ]
+    },
+    {
+        "codigo": 661,
+        "materia": "Lógica Simbólica y Fundamentos de la Decisión",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 662,
+        "materia": "Seguridad Informática y Principios de Auditoría",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 6,
+        "correlativas": [
+            663
+        ]
+    },
+    {
+        "codigo": 663,
+        "materia": "Sistemas de Datos",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 6,
+        "correlativas": [
+            661
+        ]
+    },
+    {
+        "codigo": 740,
+        "materia": "Redes Informáticas",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": [
+            655
+        ]
+    },
+	{
+        "codigo": 1275,
+        "materia": "Introducción a la Tecnología de la Información y las Comunicaciones",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 1601,
+        "materia": "Ingeniería de Software",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": [
+            1275
+        ]
+    },
+    {
+        "codigo": 1603,
+        "materia": "Derecho Informático I",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": [
+            1275
+        ]
+    },
+    {
+        "codigo": 1604,
+        "materia": "Derecho Informático II",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 6,
+        "correlativas": [
+            1603
+        ]
+    },
+    {
+        "codigo": 1652,
+        "materia": "Teoría de los Lenguajes y Algoritmos",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": [
+            661
+        ]
+    },
+    {
+        "codigo": 1653,
+        "materia": "Tecnología de los Computadores y Sistemas Operativos",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 6,
+        "correlativas": [
+            1275
+        ]
+    },
+    {
+        "codigo": 1654,
+        "materia": "Construcción de Aplicaciones Informáticas",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": [
+            1652
+        ]
+    },
+    {
+        "codigo": 1660,
+        "materia": "Actuación Profesional del Licenciado en Sistemas de las Organizaciones",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 6,
+        "correlativas": [
+            740,
+            1654
+        ]
+    },
+    {
+        "codigo": 1799,
+        "materia": "Gestión de Recursos Informáticos",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": [
+            658,
+            662
+        ]
+    },
+    {
+        "codigo": "#1",
+        "materia": "Optativa",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": "#2",
+        "materia": "Optativa",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 470,
+        "materia": "Ciencias de la Decisión (vigente en 2025)",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": [
+            661
+        ]
+    },
+    {
+        "codigo": 700,
+        "materia": "Economía y Negocios Digitales (vigente en 2025)",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Optativa",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 701,
+        "materia": "Analítica de Datos (vigente en 2025)",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Optativa",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 702,
+        "materia": "Auditoría de Sistemas de Información (vigente en 2025)",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Optativa",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": [
+            662
+        ]
+    },
+    {
+        "codigo": 716,
+        "materia": "Gestión de la Innovación y Tecnología Informática (vigente en 2025)",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Optativa",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": []
+    }
+]
