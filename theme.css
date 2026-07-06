@@ -1,0 +1,281 @@
+/* ============================================
+   THEME STYLES - DARK MODE (DEFAULT)
+   ============================================ */
+
+body.theme-dark {
+	--color-bg-primary: #1f2937;
+	--color-bg-secondary: #111827;
+	--color-text-primary: #ffffff;
+	--color-text-secondary: #d1d5db;
+	--color-border: #6b7280;
+	--color-accent: #FF5733;
+	--color-success: #10b981;
+	--color-danger: #ef4444;
+	--color-warning: #f59e0b;
+}
+
+body.theme-dark .diagram {
+	background-color: #1f2937;
+}
+
+body.theme-dark .form-select option {
+	background-color: #111827;
+	color: #ffffff;
+}
+
+body.theme-dark .toast {
+	background-color: #1f2937;
+	color: #ffffff;
+	border-color: #6b7280;
+}
+
+/* ============================================
+   THEME STYLES - LIGHT MODE
+   ============================================ */
+
+body.theme-light {
+	--color-bg-primary: #f9fafb;
+	--color-bg-secondary: #ffffff;
+	--color-text-primary: #111827;
+	--color-text-secondary: #6b7280;
+	--color-border: #e5e7eb;
+	--color-accent: #FF5733;
+	--color-success: #059669;
+	--color-danger: #dc2626;
+	--color-warning: #d97706;
+}
+
+body.theme-light {
+	background-color: #f9fafb;
+}
+
+body.theme-light .main-header {
+	background-color: #ffffff;
+	border-bottom-color: #e5e7eb;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-light .diagram {
+	background-color: #f9fafb;
+}
+
+body.theme-light .form-select,
+body.theme-light .form-input {
+	background-color: #ffffff;
+	border-color: #d1d5db;
+	color: #111827;
+}
+
+body.theme-light .form-select:hover,
+body.theme-light .form-input:hover {
+	border-color: #FF5733;
+	background-color: #ffffff;
+	box-shadow: 0 0 0 3px rgba(255, 87, 51, 0.1);
+}
+
+body.theme-light .form-select:focus,
+body.theme-light .form-input:focus {
+	border-color: #FF5733;
+	background-color: #ffffff;
+}
+
+body.theme-light .form-select option {
+	background-color: #ffffff;
+	color: #111827;
+}
+
+body.theme-light .student-info {
+	background-color: rgba(255, 87, 51, 0.05);
+	border-color: rgba(255, 87, 51, 0.2);
+}
+
+body.theme-light .toast {
+	background-color: #ffffff;
+	color: #111827;
+	border-color: #e5e7eb;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-light .toast.success {
+	border-color: #10b981;
+	background-color: rgba(16, 185, 129, 0.05);
+	color: #059669;
+}
+
+body.theme-light .toast.error {
+	border-color: #ef4444;
+	background-color: rgba(239, 68, 68, 0.05);
+	color: #dc2626;
+}
+
+body.theme-light .toast.warning {
+	border-color: #f59e0b;
+	background-color: rgba(245, 158, 11, 0.05);
+	color: #d97706;
+}
+
+body.theme-light .toast.info {
+	border-color: #FF5733;
+	background-color: rgba(255, 87, 51, 0.05);
+	color: #FF5733;
+}
+
+body.theme-light .icon-button {
+	border-color: #d1d5db;
+	color: #111827;
+}
+
+body.theme-light .icon-button:hover {
+	border-color: #FF5733;
+	background-color: rgba(255, 87, 51, 0.05);
+	color: #FF5733;
+}
+
+body.theme-light .theme-toggle {
+	border-color: #d1d5db;
+	background-color: #ffffff;
+}
+
+body.theme-light .theme-toggle:hover {
+	border-color: #FF5733;
+	background-color: rgba(255, 87, 51, 0.05);
+}
+
+body.theme-light .header-center {
+	border-left-color: #e5e7eb;
+	border-right-color: #e5e7eb;
+}
+
+/* ============================================
+   THEME TRANSITIONS
+   ============================================ */
+
+body {
+	transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.main-header,
+.form-select,
+.form-input,
+.icon-button,
+.theme-toggle,
+.diagram {
+	transition: background-color var(--transition-base), 
+				border-color var(--transition-base), 
+				color var(--transition-base),
+				box-shadow var(--transition-base);
+}
+
+/* ============================================
+   GOJS THEME INTEGRATION
+   ============================================ */
+
+/* Light theme colors for GoJS */
+body.theme-light .diagram {
+	--gojs-background: #f9fafb;
+	--gojs-text: #111827;
+	--gojs-accent: #FF5733;
+}
+
+/* Dark theme colors for GoJS */
+body.theme-dark .diagram {
+	--gojs-background: #1f2937;
+	--gojs-text: #ffffff;
+	--gojs-accent: #FF5733;
+}
+
+/* ============================================
+   SCROLLBAR THEME VARIATIONS
+   ============================================ */
+
+body.theme-light::-webkit-scrollbar-track {
+	background: #f3f4f6;
+}
+
+body.theme-light::-webkit-scrollbar-thumb {
+	background: #d1d5db;
+}
+
+body.theme-light::-webkit-scrollbar-thumb:hover {
+	background: #9ca3af;
+}
+
+body.theme-dark::-webkit-scrollbar-track {
+	background: #1f2937;
+}
+
+body.theme-dark::-webkit-scrollbar-thumb {
+	background: #6b7280;
+}
+
+body.theme-dark::-webkit-scrollbar-thumb:hover {
+	background: #FF5733;
+}
+
+/* ============================================
+   FOCUS STYLES BY THEME
+   ============================================ */
+
+body.theme-light *:focus-visible {
+	outline-color: #FF5733;
+}
+
+body.theme-dark *:focus-visible {
+	outline-color: #FF5733;
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+
+@media (prefers-contrast: more) {
+	:root {
+		--color-border: #3f3f3f;
+	}
+
+	body.theme-dark {
+		--color-border: #8b8b8b;
+	}
+
+	body.theme-light {
+		--color-border: #7a7a7a;
+	}
+
+	.form-select,
+	.form-input,
+	.icon-button {
+		border-width: 2px;
+	}
+}
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+@media (prefers-color-scheme: light) {
+	body {
+		color-scheme: light;
+	}
+
+	body.theme-light {
+		color-scheme: light;
+	}
+
+	body.theme-dark {
+		color-scheme: dark;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color-scheme: dark;
+	}
+
+	body.theme-light {
+		color-scheme: light;
+	}
+
+	body.theme-dark {
+		color-scheme: dark;
+	}
+}

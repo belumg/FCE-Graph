@@ -1,112 +1,114 @@
-#pip install flask flask-pymongo python-dotenv
+# -*- coding: utf-8 -*-
+"""
+API REST de FCE-Graph.
+
+Expone endpoints CRUD sobre la colección 'alumnos' de MongoDB.
+Requiere: flask, flask-cors, flask-pymongo, python-dotenv
+  pip install flask flask-cors flask-pymongo python-dotenv
+"""
+
+import logging
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
-from bson.json_util import dumps
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
-app = Flask(__name__)
-# CORS(app, origins=["http://localhost:3000"]) # permite solo los origenes de mi frontend
-CORS(app)
-app.config["MONGO_URI"] = os.getenv("MONGO_URI")
-mongo = PyMongo(app)
-db = mongo.db
+from config import Configuracion
+from modelos import (
+    ErrorValidacion,
+    RepositorioAlumnos,
+    normalizar_documento_alumno,
+    serializar_documento,
+    validar_registro,
+)
 
-# Recuperar todos los registros guardados.
-@app.route('/alumnos', methods=['GET'])
-def obtener_todos():
-    alumnos = db.alumnos.find()
-    return dumps(alumnos), 200
-
-# Consultar por número de registro.
-@app.route('/alumnos/registro/<int:registro>', methods=['GET'])
-def obtener_por_registro(registro):
-    alumno = db.alumnos.find_one({"registro": registro})
-    if alumno:
-        return dumps(alumno), 200
-    else:
-        return jsonify({"error": "No encontrado"}), 404
-    
-# Posible mejora
-# if alumno:
-#         return jsonify(alumno), 200
-#     else:
-#         return jsonify({"error": "No encontrado"}), 404
-
-# Ruta para eliminar un alumno por registro
-@app.route('/alumnos/registro/<int:registro>', methods=['DELETE'])
-def eliminar_alumno(registro):
-    try:
-        resultado = db.alumnos.delete_one({"registro": registro})
-        if resultado.deleted_count == 0:
-            return jsonify({"error": "Alumno no encontrado"}), 404
-        return jsonify({"mensaje": "Alumno eliminado"}), 200
-    except:
-        return jsonify({"error": "Registro inválido"}), 400
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("fce-graph")
 
 
-@app.route('/alumnos', methods=['POST'])
-def crear_alumno():
-    data = request.get_json()
+def crear_app():
+    """Application factory: crea y configura la instancia de Flask."""
+    app = Flask(__name__)
+    CORS(app, origins=Configuracion.ORIGENES_PERMITIDOS)
 
-    resultado = db.alumnos.insert_one(data)
+    app.config["MONGO_URI"] = Configuracion.URI_MONGO
+    mongo = PyMongo(app)
+    repositorio = RepositorioAlumnos(mongo.db.alumnos)
 
-    return jsonify({
-        "mensaje": "Alumno creado",
-        "id": str(resultado.inserted_id)
-    }), 201
+    registrar_rutas(app, repositorio)
+    registrar_manejadores_de_error(app)
 
-
-# Actualizar datos.
-@app.route('/alumnos/registro/<int:registro>', methods=['PUT'])
-def actualizar_data_alumno(registro):
-    data = request.get_json()
-
-    resultado = db.alumnos.update_one(
-        {'registro': registro},
-        {'$set': data}
-    )
-    
-    if resultado.matched_count > 0:
-        return jsonify({'mensaje': 'Usuario actualizado correctamente'})
-    else:
-        return jsonify({'error': 'Usuario no encontrado'}), 404
+    return app
 
 
-def usuario_serializer(usuario):
-    usuario['_id'] = str(usuario['_id'])
-    return usuario
+def registrar_rutas(app, repositorio):
+
+    @app.route("/salud", methods=["GET"])
+    def verificar_salud():
+        """Endpoint simple para chequeos de disponibilidad (health check)."""
+        return jsonify({"estado": "ok"}), 200
+
+    @app.route("/alumnos", methods=["GET"])
+    def obtener_todos():
+        alumnos = repositorio.obtener_todos()
+        return jsonify(serializar_documento(alumnos)), 200
+
+    @app.route("/alumnos/registro/<int:registro>", methods=["GET"])
+    def obtener_por_registro(registro):
+        alumno = repositorio.buscar_por_registro(registro)
+        if not alumno:
+            return jsonify({"error": "No se encontró un alumno con ese registro."}), 404
+        return jsonify(serializar_documento(alumno)), 200
+
+    @app.route("/alumnos", methods=["POST"])
+    def crear_alumno():
+        payload = request.get_json(silent=True) or {}
+        documento = normalizar_documento_alumno(payload)
+
+        if repositorio.existe(documento["registro"]):
+            return jsonify({"error": "Ya existe un alumno con ese registro."}), 409
+
+        alumno_creado = repositorio.crear(documento)
+        return jsonify(serializar_documento(alumno_creado)), 201
+
+    @app.route("/alumnos/registro/<int:registro>", methods=["PUT"])
+    def actualizar_alumno(registro):
+        payload = request.get_json(silent=True) or {}
+        # Se reutiliza el registro de la URL como fuente de verdad.
+        payload["registro"] = registro
+        documento = normalizar_documento_alumno(payload)
+
+        actualizado = repositorio.actualizar(registro, documento)
+        if not actualizado:
+            return jsonify({"error": "Alumno no encontrado."}), 404
+        return jsonify({"mensaje": "Alumno actualizado correctamente."}), 200
+
+    @app.route("/alumnos/registro/<int:registro>", methods=["DELETE"])
+    def eliminar_alumno(registro):
+        validar_registro(registro)
+        eliminado = repositorio.eliminar(registro)
+        if not eliminado:
+            return jsonify({"error": "Alumno no encontrado."}), 404
+        return jsonify({"mensaje": "Alumno eliminado correctamente."}), 200
 
 
-# CREATE
-@app.route('/alumnos', methods=['POST'])
-def agregar_nuevo_alumno():
-    data = request.get_json()
+def registrar_manejadores_de_error(app):
 
-    # Validación simple de campos obligatorios
-    registro = data.get("registro")
-    carreras = data.get("carreras")
-    aplazos = data.get("aplazos")
+    @app.errorhandler(ErrorValidacion)
+    def manejar_error_validacion(error):
+        return jsonify({"error": str(error)}), 400
 
-    if not registro or not carreras or not aplazos:
-        return jsonify({"error": "Faltan campos obligatorios"}), 400
+    @app.errorhandler(404)
+    def manejar_no_encontrado(error):
+        return jsonify({"error": "Recurso no encontrado."}), 404
 
-    nueva_data = {
-        "registro": registro,
-        "carreras": carreras,
-        "aplazos": aplazos
-    }
-    
-    resultado = db.alumnos.insert_one(nueva_data)
-    
-    nuevo_alumno = db.alumnos.find_one({"_id": resultado.inserted_id})
-
-    return jsonify(usuario_serializer(nuevo_alumno)), 201
+    @app.errorhandler(Exception)
+    def manejar_error_inesperado(error):
+        logger.exception("Error inesperado procesando la solicitud")
+        return jsonify({"error": "Error interno del servidor."}), 500
 
 
-if __name__ == '__main__':
-    app.run(debug=True, port=int(os.getenv("PORT", 5000)))
+app = crear_app()
+
+if __name__ == "__main__":
+    app.run(debug=Configuracion.DEBUG, port=Configuracion.PUERTO)

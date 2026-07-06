@@ -1,0 +1,511 @@
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE FIRST
+   ============================================ */
+
+/* ============================================
+   MOBILE - Default (max-width: 640px)
+   ============================================ */
+
+@media screen and (max-width: 640px) {
+	:root {
+		--spacing-xl: 12px;
+		--spacing-lg: 12px;
+		--font-size-lg: 1rem;
+	}
+
+	.main-header {
+		padding: var(--spacing-sm) var(--spacing-md);
+	}
+
+	.header-content {
+		flex-direction: column;
+		gap: var(--spacing-sm);
+	}
+
+	.header-section {
+		width: 100%;
+		flex: none;
+		gap: var(--spacing-sm);
+	}
+
+	.header-left {
+		min-width: auto;
+		flex-direction: column;
+		gap: var(--spacing-sm);
+	}
+
+	.header-center {
+		flex: none;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+		border-bottom: none;
+		padding: 0;
+		width: 100%;
+		display: none;
+	}
+
+	.header-center.has-selection {
+		display: flex;
+		border-top: 1px solid var(--color-border);
+		border-bottom: 1px solid var(--color-border);
+		padding: var(--spacing-md) 0;
+	}
+
+	/* El banner central directamente desaparece del layout (sin espacio ni
+	   bordes) cuando no hay materia seleccionada, y vuelve a aparecer al
+	   elegir una. */
+
+	.header-right {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--spacing-sm);
+	}
+
+	.student-info {
+		width: auto;
+		flex: 1;
+		gap: var(--spacing-sm);
+		padding: var(--spacing-xs) var(--spacing-sm);
+	}
+
+	.info-group {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.header-theme {
+		width: auto;
+		justify-content: flex-start;
+	}
+
+	.theme-toggle {
+		width: 60px;
+	}
+
+	/* Form Elements - Mobile */
+	.form-select,
+	.form-input {
+		min-height: 44px;
+		width: 100%;
+	}
+
+	.form-group {
+		width: 100%;
+	}
+
+	/* Details Section - Mobile */
+	.subject-details {
+		width: 100%;
+	}
+
+	.details-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.subject-actions {
+		width: 100%;
+		flex-wrap: wrap;
+	}
+
+	.subject-actions .form-group {
+		flex: 1;
+		min-width: 100px;
+	}
+
+	.nota-row {
+		flex-wrap: nowrap;
+	}
+
+	.details-info {
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	.info-item {
+		flex-direction: column;
+		gap: var(--spacing-xs);
+	}
+
+	/* Icon buttons - Improve touch targets */
+	.icon-button {
+		min-width: 44px;
+		min-height: 44px;
+	}
+
+	.header-actions {
+		width: auto;
+		justify-content: flex-start;
+		gap: var(--spacing-xs);
+	}
+
+	/* Toast notifications - Mobile adjustment */
+	.toast-container {
+		max-width: calc(100vw - var(--spacing-lg) * 2);
+		left: var(--spacing-md);
+		right: var(--spacing-md);
+	}
+
+	.toast {
+		gap: var(--spacing-sm);
+		padding: var(--spacing-md);
+	}
+}
+
+/* ============================================
+   TABLET - Medium (641px to 1024px)
+   ============================================ */
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+	:root {
+		--spacing-xl: 16px;
+	}
+
+	.main-header {
+		padding: var(--spacing-lg) var(--spacing-lg);
+	}
+
+	.header-content {
+		flex-wrap: wrap;
+		gap: var(--spacing-lg);
+	}
+
+	.header-left {
+		flex: 0 1 100%;
+		min-width: auto;
+		max-width: 100%;
+	}
+
+	.header-center {
+		flex: 1;
+		border-left: 1px solid var(--color-border);
+		border-right: 1px solid var(--color-border);
+		min-width: 0;
+		padding: 0 var(--spacing-lg);
+	}
+
+	.header-right {
+		flex: 0 1 auto;
+		gap: var(--spacing-lg);
+	}
+
+	.header-theme {
+		flex: 0 0 auto;
+	}
+
+	/* Form Elements - Tablet */
+	.form-select,
+	.form-input {
+		min-height: 40px;
+	}
+
+	.header-left {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: var(--spacing-md);
+	}
+
+	.form-group {
+		flex: 0 1 auto;
+	}
+
+	.header-actions {
+		flex: 0 0 auto;
+	}
+
+	/* Details - Tablet */
+	.details-info {
+		gap: var(--spacing-lg);
+	}
+
+	/* Student Info - Tablet */
+	.student-info {
+		flex-direction: row;
+		align-items: center;
+		padding: var(--spacing-md);
+	}
+
+	.info-group {
+		white-space: normal;
+	}
+}
+
+/* ============================================
+   DESKTOP - Large (1025px and above)
+   ============================================ */
+
+@media screen and (min-width: 1025px) {
+	.header-left {
+		flex: 0 1 auto;
+		flex-direction: row;
+		align-items: flex-end;
+	}
+
+	.header-left .form-group {
+		flex: 0 1 auto;
+	}
+
+	.header-actions {
+		align-self: flex-end;
+	}
+
+	.header-center {
+		flex: 1;
+		min-width: 300px;
+	}
+
+	.header-right {
+		flex: 0 0 auto;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.header-theme {
+		flex: 0 0 auto;
+	}
+
+	/* Details - Desktop */
+	.subject-details {
+		width: 100%;
+	}
+
+	.details-header {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.subject-title {
+		flex: 0 1 auto;
+		min-width: 200px;
+	}
+
+	.subject-actions {
+		flex: 0 0 auto;
+		flex-wrap: nowrap;
+	}
+
+	.details-info {
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+}
+
+/* ============================================
+   EXTRA LARGE - Desktop (1440px and above)
+   ============================================ */
+
+@media screen and (min-width: 1440px) {
+	:root {
+		--spacing-xl: 24px;
+	}
+
+	.main-header {
+		padding: var(--spacing-lg) var(--spacing-xl);
+	}
+
+	.header-content {
+		gap: var(--spacing-xl);
+	}
+
+	.header-section {
+		gap: var(--spacing-lg);
+	}
+}
+
+/* ============================================
+   ORIENTATION CHANGES
+   ============================================ */
+
+/* Landscape mode (small height) */
+@media screen and (max-height: 500px) and (landscape) {
+	.main-header {
+		padding: var(--spacing-sm) var(--spacing-md);
+	}
+
+	.header-content {
+		gap: var(--spacing-sm);
+	}
+
+	.header-section {
+		gap: var(--spacing-sm);
+	}
+
+	.form-select,
+	.form-input,
+	.icon-button {
+		min-height: 32px;
+		font-size: var(--font-size-sm);
+	}
+
+	.subject-details {
+		gap: var(--spacing-sm);
+	}
+
+	.details-header {
+		gap: var(--spacing-sm);
+	}
+
+	.subject-actions {
+		gap: var(--spacing-xs);
+	}
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+	/* Disable hover effects on touch devices */
+	.icon-button:hover {
+		border-color: var(--color-border);
+		background-color: transparent;
+	}
+
+	.form-select:hover,
+	.form-input:hover {
+		border-color: var(--color-border);
+		background-color: var(--color-bg-secondary);
+	}
+
+	/* Increase tap target size for touch */
+	.icon-button {
+		min-width: 48px;
+		min-height: 48px;
+	}
+
+	button {
+		min-height: 48px;
+	}
+
+	.form-select,
+	.form-input {
+		min-height: 48px;
+		font-size: 16px; /* Prevents zoom on iOS */
+	}
+}
+
+/* ============================================
+   HIGH RESOLUTION DISPLAYS
+   ============================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.icon-button,
+	.form-select,
+	.form-input {
+		border-width: 1px;
+	}
+}
+
+/* ============================================
+   DARK MODE / LIGHT MODE
+   ============================================ */
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--color-bg-primary: #f3f4f6;
+		--color-bg-secondary: #ffffff;
+		--color-text-primary: #111827;
+		--color-text-secondary: #6b7280;
+		--color-border: #e5e7eb;
+	}
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+	.main-header,
+	.header-actions,
+	.theme-toggle {
+		display: none;
+	}
+
+	.diagram-container {
+		height: 100vh;
+	}
+
+	.diagram {
+		background-color: white;
+	}
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR - RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+	::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 3px;
+	}
+}
+
+/* ============================================
+   DIALOG / MODAL ADJUSTMENTS
+   ============================================ */
+
+@media screen and (max-width: 640px) {
+	dialog {
+		max-width: 90vw;
+		max-height: 90vh;
+		margin: auto;
+	}
+
+	dialog::backdrop {
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+}
+
+/* ============================================
+   ESTADO INICIAL DE COMPONENTES DINÁMICOS
+   ============================================ */
+
+/* Acciones de la materia seleccionada: ocultas hasta aprobar/tener nota. */
+.subject-actions {
+	display: none;
+}
+
+/* ============================================
+   LAYOUT DEL DIAGRAMA (GoJS)
+   ============================================ */
+
+/* Altura dinámica real en mobile: 100vh no descuenta la barra de
+   direcciones del navegador, lo que dejaba al diagrama con menos
+   espacio del disponible y forzaba scroll interno en vez de encajar. */
+html, body, .app-container {
+	height: 100dvh;
+}
+
+/* Asegura que el contenedor del diagrama pueda encogerse dentro del
+   layout flex en vez de desbordar cuando el header ocupa varias filas. */
+.diagram-container,
+#myDiagramDiv {
+	min-height: 0;
+}
+
+/* El lienzo de GoJS necesita altura explícita dentro del contenedor flex. */
+#myDiagramDiv {
+	width: 100%;
+	height: 100%;
+}

@@ -1,80 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<script src="https://unpkg.com/gojs/release/go.js"></script>
 	<meta charset="UTF-8">
-  	<title>FCE Graph</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+	<title>FCE Graph</title>
 	<link rel="icon" href="icon.png" type="image/png">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- URL base de la API. Editar este valor al desplegar el backend. -->
+	<meta name="api-base-url" content="http://localhost:5000">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-	<script>
-		const link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.href = 'estilos.css?v=' + new Date().getTime();
-		document.head.appendChild(link);
-	</script>
+	<script src="https://unpkg.com/gojs/release/go.js"></script>
+
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="theme.css">
+	<link rel="stylesheet" href="responsive.css">
 </head>
 
-<body>
-	<div id="banner-superior">
-		<div id="contenedor-izquierda">
-			<label for="opciones"> Carrera:</label>
-			<select id="opciones">
-				<option value="AC"> Actuario </option>
-				<option value="LA"> Lic. en Administración </option>
-				<option value="CP"> Contador Público </option>
-				<option value="LE"> Lic. en Economía </option>
-				<option value="LS"> Lic. en Sistemas de Información </option>
-				<option value="AD"> Tec. en Gestión y Análisis de Datos </option>
-			</select>
-			<input id="registro" type="text" placeholder="Registro n°" />
-			<i id="buscar" class="fa-solid fa-magnifying-glass"></i>
-			<i id="guardar" class="fa-solid fa-floppy-disk"></i>
-			<i id="eliminar" class="fa-solid fa-trash"></i>
-		</div>
+<body class="theme-dark">
+	<div class="app-container">
+		<header class="main-header">
+			<div class="header-content">
 
-		<div id="detalles" class="contenedor-detalles">
-			<div class="fila-superior">
-				<div class="materia" id="materia"> Materia </div>
-				<div class="acciones">
-					<input id="nota" type="number" placeholder="Nota" />
-					<i id="ok" class="fa-solid fa-check"></i>
-					<i id="not-ok" class="fa-solid fa-xmark"></i>
+				<!-- Sección izquierda: selector de carrera + acciones sobre el registro -->
+				<div class="header-section header-left" id="contenedor-izquierda">
+					<div class="form-group">
+						<label class="form-label" for="opciones">Carrera:</label>
+						<select id="opciones" class="form-select">
+							<option value="AC">Actuario</option>
+							<option value="LA">Lic. en Administración</option>
+							<option value="CP">Contador Público</option>
+							<option value="LE">Lic. en Economía</option>
+							<option value="LS">Lic. en Sistemas de Información</option>
+							<option value="AD">Tec. en Gestión y Análisis de Datos</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label class="form-label" for="registro">Registro:</label>
+						<input id="registro" class="form-input" type="text" inputmode="numeric" placeholder="Registro n°" aria-label="Número de registro">
+					</div>
+
+					<div class="header-actions">
+						<button id="buscar" class="icon-button" type="button" aria-label="Buscar alumno">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</button>
+						<button id="guardar" class="icon-button success" type="button" aria-label="Guardar cambios">
+							<i class="fa-solid fa-floppy-disk"></i>
+						</button>
+						<button id="eliminar" class="icon-button danger" type="button" aria-label="Eliminar registro">
+							<i class="fa-solid fa-trash"></i>
+						</button>
+					</div>
 				</div>
-			</div>
-			<div class="fila-inferior" id="info-completa">
-				Carga semanal: <span id="hs_semanales"> - </span> hs |
-				Departamento: <span id="departamento"> - </span>
-			</div>
-		</div>
 
-		<div id="contenedor-derecha">
-			<div class="fila-superior-derecha">
-				Cantidad de aplazos: <input id="aplazos" />
+				<!-- Sección central: detalle de la materia seleccionada -->
+				<div class="header-section header-center" id="detalles">
+					<div class="subject-details" id="subject-details">
+						<div class="details-header">
+							<div class="subject-title" id="materia">Materia</div>
+							<div class="subject-actions">
+								<div class="form-group">
+									<label class="form-label" for="nota">Nota:</label>
+									<div class="nota-row">
+										<input id="nota" class="form-input" type="number" placeholder="Nota" aria-label="Nota de la materia">
+										<button id="ok" class="icon-button success" type="button" aria-label="Confirmar nota">
+											<i class="fa-solid fa-check"></i>
+										</button>
+										<button id="not-ok" class="icon-button danger" type="button" aria-label="Quitar nota">
+											<i class="fa-solid fa-xmark"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="details-info" id="info-completa">
+							<div class="info-item">
+								<span class="info-label">Carga semanal:</span>
+								<span class="info-value" id="hs_semanales">-</span>
+								<span class="info-unit">hs</span>
+							</div>
+							<div class="info-item">
+								<span class="info-label">Departamento:</span>
+								<span class="info-value" id="departamento">-</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Sección derecha: aplazos, promedio y switch de tema -->
+				<div class="header-section header-right">
+					<div class="student-info" id="contenedor-derecha">
+						<div class="info-group">
+							<label class="form-label" for="aplazos">Aplazos:</label>
+							<input id="aplazos" class="form-input" type="number" inputmode="numeric" aria-label="Cantidad de aplazos">
+						</div>
+						<div class="info-group">
+							<span class="form-label">Promedio:</span>
+							<span class="form-value" id="promedio">-</span>
+						</div>
+					</div>
+
+					<div class="header-theme">
+						<button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema claro/oscuro">
+							<i class="fa-regular fa-moon icon-moon"></i>
+							<i class="fa-regular fa-sun icon-sun"></i>
+						</button>
+					</div>
+				</div>
+
 			</div>
-			<div class="fila-inferior-derecha">
-				<b> Promedio: </b> <span id="promedio"> - </span>
-			</div>
+		</header>
+
+		<div class="diagram-container">
+			<main id="myDiagramDiv" class="diagram"></main>
 		</div>
 	</div>
-	
-	<div id="myDiagramDiv"> </div>
-	<form autocomplete="off">
-	<label id="boton" class="switch" >
-			<input type="checkbox" id="themeToggle" onchange="cambiar_tema()">
-			<span class="slider">
-				<i class="fa-regular fa-moon icon-left"></i>
-				<i class="fa-regular fa-sun icon-right"></i>
-			</span>
-		</label>
-	</form>
-	
-	<script src="set_diagram.js?v=<?= Date.now() ?>"></script>
-	<script src="load_data.js?v=<?= Date.now() ?>"></script>
-	<script src="functions.js?v=<?= Date.now() ?>"></script>
+
+	<script src="config.js"></script>
+	<script src="set_diagram.js"></script>
+	<script src="load_data.js"></script>
+	<script src="functions.js"></script>
 	<script src="animations.js"></script>
 </body>
 </html>
