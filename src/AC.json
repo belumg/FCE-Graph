@@ -1,0 +1,457 @@
+[
+    {
+        "codigo": 241,
+        "materia": "Análisis Matemático I",
+	    "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": []
+    },
+    {
+        "codigo": 242,
+        "materia": "Economía",
+	    "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 245,
+        "materia": "Álgebra",
+	    "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 246,
+        "materia": "Historia Económica y Social General",
+	    "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 255,
+        "materia": "Análisis Contable",
+	    "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Contabilidad",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 256,
+        "materia": "Instituciones de Gobierno y Economía Política",
+	    "categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 262,
+        "materia": "Macroeconomía I",
+	    "categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 274,
+        "materia": "Sistemas Administrativos",
+	    "categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 279,
+        "materia": "Administración Financiera",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": [
+            601,
+	        602
+        ]
+    },
+    {
+        "codigo": 291,
+        "materia": "Microeconomía para Economistas",
+	    "categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 6,
+        "correlativas": [
+            542
+        ]
+    },
+    {
+        "codigo": 462,
+        "materia": "Derecho Empresarial",
+	    "categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Derecho",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 540,
+        "materia": "Análisis Estadístico I",
+	    "categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 542,
+        "materia": "Matemática Aplicada I",
+	    "categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 544,
+        "materia": "Matemática Aplicada II",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": [
+            542
+        ]
+    },
+    {
+        "codigo": 548,
+        "materia": "Dinero y Bancos",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            279,
+            602
+        ]
+    },
+    {
+        "codigo": 601,
+        "materia": "Matemática Financiera y Actuarial",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": [
+            540,
+            542
+        ]
+    },
+    {
+        "codigo": 602,
+        "materia": "Análisis Estadístico II",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": [
+            540,
+            542
+        ]
+    },
+    {
+        "codigo": 603,
+        "materia": "Derecho Financiero, Seguros y Seguridad Social",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Derecho",
+        "hs_semanales": 4,
+        "correlativas": [
+            462
+        ]
+    },
+    {
+        "codigo": 717,
+        "materia": "Modelos y Proyecciones Actuariales",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            746,
+            757,
+            758
+        ]
+    },
+    {
+        "codigo": 746,
+        "materia": "Computación Científica Actuarial",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            540,
+            542
+        ]
+    },
+    {
+        "codigo": 751,
+        "materia": "Estadística Actuarial",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            544,
+            602
+        ]
+    },
+    {
+        "codigo": 752,
+        "materia": "Análisis Numérico",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 5,
+        "correlativas": [
+            544
+        ]
+    },
+    {
+        "codigo": 753,
+        "materia": "Biometría Actuarial",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": [
+            601,
+            751,
+            752
+        ]
+    },
+    {
+        "codigo": 754,
+        "materia": "Teoría Actuarial de los Seguros Personales",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            753
+        ]
+    },
+    {
+        "codigo": 755,
+        "materia": "Teoría Actuarial de los Seguros Patrimoniales",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            601,
+            751,
+            752
+        ]
+    },
+    {
+        "codigo": 756,
+        "materia": "Teoría Actuarial de los Fondos y Planes de Jubilaciones, Pensiones y Salud",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": [
+            754
+        ]
+    },
+    {
+        "codigo": 757,
+        "materia": "Teoría de Equilibrio Actuarial",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            754,
+            755
+        ]
+    },
+    {
+        "codigo": 758,
+        "materia": "Bases Actuariales de las Inversiones y Financiaciones",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            601,
+            751
+        ]
+    },
+    {
+        "codigo": 1759,
+        "materia": "Práctica Profesional del Actuario",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            755,
+            756
+        ]
+    },
+    {
+        "codigo": "#1",
+        "materia": "ELECTIVA u OPTATIVA",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": "#2",
+        "materia": "ELECTIVA u OPTATIVA",
+	    "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 277,
+        "materia": "Gestión y Costos",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Electiva",
+        "departamento": "Contabilidad",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 283,
+        "materia": "Macroeconomía II",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 6,
+        "correlativas": [
+            262,
+            544
+        ]
+    },
+    {
+        "codigo": 451,
+        "materia": "Historia de la Economía y las Políticas Económicas en Argentina",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Electiva",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 543,
+        "materia": "Econometría I",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Electiva",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": [
+            540,
+            544
+        ]
+    },
+    {
+        "codigo": 546,
+        "materia": "Econometría II",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Electiva",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": [
+            543
+        ]
+    },
+    {
+        "codigo": 720,
+        "materia": "Demografía y Seguridad Social",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Electiva",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            753
+        ]
+    },
+    {
+        "codigo": 721,
+        "materia": "Poder Económico y Derechos Humanos",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Electiva",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": [
+            754
+        ]
+    },
+    {
+        "codigo": 784,
+        "materia": "Análisis Numérico Avanzado",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Electiva",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            752,
+            746
+        ]
+    },
+    {
+        "codigo": 741,
+        "materia": "Elementos de Topología para Economía y Gestión (vigente en 2025)",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Optativa",
+        "departamento": "Matemática",
+        "hs_semanales": 2,
+        "correlativas": [
+            544
+        ]
+    },
+    {
+        "codigo": 750,
+        "materia": "Métodos Cuantitativos (vigente en 2025)",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Optativa",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 763,
+        "materia": "Teoría de los Juegos (vigente en 2025)",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Optativa",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 791,
+        "materia": "Seminario de Ética de las Ocupaciones (vigente en 2025)",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    }
+]       

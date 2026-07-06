@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/gojs/release/go.js"></script>
+	<meta charset="UTF-8">
+  	<title>FCE Graph</title>
+	<link rel="icon" href="icon.png" type="image/png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<script>
+		const link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.href = 'estilos.css?v=' + new Date().getTime();
+		document.head.appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div id="banner-superior">
+		<div id="contenedor-izquierda">
+			<label for="opciones"> Carrera:</label>
+			<select id="opciones">
+				<option value="AC"> Actuario </option>
+				<option value="LA"> Lic. en Administración </option>
+				<option value="CP"> Contador Público </option>
+				<option value="LE"> Lic. en Economía </option>
+				<option value="LS"> Lic. en Sistemas de Información </option>
+				<option value="AD"> Tec. en Gestión y Análisis de Datos </option>
+			</select>
+			<input id="registro" type="text" placeholder="Registro n°" />
+			<i id="buscar" class="fa-solid fa-magnifying-glass"></i>
+			<i id="guardar" class="fa-solid fa-floppy-disk"></i>
+			<i id="eliminar" class="fa-solid fa-trash"></i>
+		</div>
+
+		<div id="detalles" class="contenedor-detalles">
+			<div class="fila-superior">
+				<div class="materia" id="materia"> Materia </div>
+				<div class="acciones">
+					<input id="nota" type="number" placeholder="Nota" />
+					<i id="ok" class="fa-solid fa-check"></i>
+					<i id="not-ok" class="fa-solid fa-xmark"></i>
+				</div>
+			</div>
+			<div class="fila-inferior" id="info-completa">
+				Carga semanal: <span id="hs_semanales"> - </span> hs |
+				Departamento: <span id="departamento"> - </span>
+			</div>
+		</div>
+
+		<div id="contenedor-derecha">
+			<div class="fila-superior-derecha">
+				Cantidad de aplazos: <input id="aplazos" />
+			</div>
+			<div class="fila-inferior-derecha">
+				<b> Promedio: </b> <span id="promedio"> - </span>
+			</div>
+		</div>
+	</div>
+	
+	<div id="myDiagramDiv"> </div>
+	<form autocomplete="off">
+	<label id="boton" class="switch" >
+			<input type="checkbox" id="themeToggle" onchange="cambiar_tema()">
+			<span class="slider">
+				<i class="fa-regular fa-moon icon-left"></i>
+				<i class="fa-regular fa-sun icon-right"></i>
+			</span>
+		</label>
+	</form>
+	
+	<script src="set_diagram.js?v=<?= Date.now() ?>"></script>
+	<script src="load_data.js?v=<?= Date.now() ?>"></script>
+	<script src="functions.js?v=<?= Date.now() ?>"></script>
+	<script src="animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,769 @@
+[
+    {
+        "codigo": 241,
+        "materia": "Análisis Matemático I",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": []
+    },
+    {
+        "codigo": 242,
+        "materia": "Economía",
+        "categoria": "Primer Tramo",
+		"caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 245,
+        "materia": "Álgebra",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 246,
+        "materia": "Historia Económica y Social General",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 255,
+        "materia": "Análisis Contable",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Contabilidad",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 256,
+        "materia": "Instituciones de Gobierno y Economía Política",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 262,
+        "materia": "Macroeconomía I",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 283,
+        "materia": "Macroeconomía II",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 6,
+        "correlativas": [
+            262,
+            544
+        ]
+    },
+    {
+        "codigo": 286,
+        "materia": "Microeconomía II",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 6,
+        "correlativas": [
+            291,
+            544
+        ]
+    },
+    {
+        "codigo": 291,
+        "materia": "Microeconomía para Economistas",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 6,
+        "correlativas": [
+            542
+        ]
+    },
+    {
+        "codigo": 540,
+        "materia": "Análisis Estadístico I",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 541,
+        "materia": "Historia de la Economía y las Políticas Económicas en Argentina",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 542,
+        "materia": "Matemática Aplicada I",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 543,
+        "materia": "Econometría I",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": [
+            540,
+            544
+        ]
+    },
+    {
+        "codigo": 544,
+        "materia": "Matemática Aplicada II",
+        "categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": [
+            542
+        ]
+    },
+    {
+        "codigo": 545,
+        "materia": "Epistemología e Historia del Pensamiento Económico",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            291
+        ]
+    },
+    {
+        "codigo": 546,
+        "materia": "Econometría II",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": [
+            543
+        ]
+    },
+    {
+        "codigo": 547,
+        "materia": "Estructura y Políticas Económicas y Sociales en Argentina",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            541
+        ]
+    },
+    {
+        "codigo": 548,
+        "materia": "Dinero y Bancos",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            283,
+            546,
+            549
+        ]
+    },
+    {
+        "codigo": 549,
+        "materia": "Economía Financiera",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            291
+        ]
+    },
+    {
+        "codigo": 554,
+        "materia": "Crecimiento Económico",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            283,
+            291,
+            544
+        ]
+    },
+    {
+        "codigo": 555,
+        "materia": "Organización Industrial",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            286
+        ]
+    },
+    {
+        "codigo": 556,
+        "materia": "Finanzas Públicas",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 558,
+        "materia": "Economía Internacional",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            286
+        ]
+    },
+    {
+        "codigo": 559,
+        "materia": "Desarrollo Económico",
+        "categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            291,
+            543
+        ]
+    },
+    {
+        "codigo": "#1",
+        "materia": "ELECTIVA u OPTATIVA ORIENTADA",
+        "categoria": "Ciclo Profesional Orientado",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": "#2",
+        "materia": "ELECTIVA u OPTATIVA ORIENTADA",
+        "categoria": "Ciclo Profesional Orientado",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": "#3",
+        "materia": "ELECTIVA u OPTATIVA ORIENTADA",
+        "categoria": "Ciclo Profesional Orientado",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": "#4",
+        "materia": "ELECTIVA u OPTATIVA ORIENTADA",
+        "categoria": "Ciclo Profesional Orientado",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 520,
+        "materia": "Ciencias de Datos para Economía y Negocios (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            540,
+            544
+        ]
+    },
+    {
+        "codigo": 523,
+        "materia": "Economía y Derecho Corporativo (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 524,
+        "materia": "Finanzas Corporativas (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            549
+        ]
+    },
+    {
+        "codigo": 525,
+        "materia": "Tópicos de Economía Digital (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            291
+        ]
+    },
+    {
+        "codigo": 527,
+        "materia": "Big Data y Machine Learning (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 708,
+        "materia": "Economía y Procesamiento de Datos No Tradicionales",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            540,
+            544
+        ]
+    },
+    {
+        "codigo": 745,
+        "materia": "Economía de la Energía",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 748,
+        "materia": "Evaluación de Proyectos (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 780,
+        "materia": "Economía Agropecuaria",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 1716,
+        "materia": "Economía y Género",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            559
+        ]
+    },
+    {
+        "codigo": 1717,
+        "materia": "Evaluación de Impacto",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            543
+        ]
+    },
+    {
+        "codigo": 1721,
+        "materia": "Economía del Comportamiento",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            286
+        ]
+    },
+    {
+        "codigo": 1725,
+        "materia": "Administración Tributaria para Economístas (Exclusiva Empresarial)",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            556
+        ]
+    },
+    {
+        "codigo": 563,
+        "materia": "Economía de la Innovación (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 708,
+        "materia": "Economía y Procesamiento de Datos No Tradicionales",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            540,
+            544
+        ]
+    },
+    {
+        "codigo": 713,
+        "materia": "Tópicos de Microeconomía (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            286
+        ]
+    },
+    {
+        "codigo": 745,
+        "materia": "Economía de la Energía",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 748,
+        "materia": "Evaluación de Proyectos (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 764,
+        "materia": "Gestión en la Economía Social (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            559
+        ]
+    },
+    {
+        "codigo": 765,
+        "materia": "Economía Ambiental",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 779,
+        "materia": "Tópicos de Macroeconomía (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            548
+        ]
+    },
+    {
+        "codigo": 780,
+        "materia": "Economía Agropecuaria",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 782,
+        "materia": "Economía Laboral",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            291,
+            543
+        ]
+    },
+    {
+        "codigo": 1287,
+        "materia": "Economía Regional y Urbana",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 1716,
+        "materia": "Economía y Género",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            559
+        ]
+    },
+    {
+        "codigo": 1717,
+        "materia": "Evaluación de Impacto",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            543
+        ]
+    },
+    {
+        "codigo": 1718,
+        "materia": "Modelos Económicos de Simulación (Exclusiva Gobierno y Políticas Públicas)",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            286
+        ]
+    },
+    {
+        "codigo": 1720,
+        "materia": "Cuentas Nacionales e Indicadores Económicos (Exclusiva Gobierno y Políticas Públicas)",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            544
+        ]
+    },
+    {
+        "codigo": 1721,
+        "materia": "Economía del Comportamiento",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            286
+        ]
+    },
+    {
+        "codigo": 1724,
+        "materia": "Economía de la Protección Social (Exclusiva Gobierno y Políticas Públicas)",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            286,
+            556
+        ]
+    },
+    {
+        "codigo": 521,
+        "materia": "Economía Austríaca (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            545
+        ]
+    },
+    {
+        "codigo": 522,
+        "materia": "Economía Sraffiana (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            545
+        ]
+    },
+    {
+        "codigo": 526,
+        "materia": "Tópicos de Historia del Pensamiento Económico y Epistemología de la Economía (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            545
+        ]
+    },
+    {
+        "codigo": 708,
+        "materia": "Economía y Procesamiento de Datos No Tradicionales",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            540,
+            544
+        ]
+    },
+    {
+        "codigo": 713,
+        "materia": "Tópicos de Microeconomía (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            286
+        ]
+    },
+    {
+        "codigo": 721,
+        "materia": "Poder Económico y Derechos Humanos (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": [
+            547,
+            559
+        ]
+    },
+    {
+        "codigo": 734,
+        "materia": "Sistemas Económicos Comparados (Exclusiva Análisis e Investigación Económica)",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            556
+        ]
+    },
+    {
+        "codigo": 741,
+        "materia": "Elementos de Topología para Economía y Gestión (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Matemática",
+        "hs_semanales": 2,
+        "correlativas": [
+            291,
+            544
+        ]
+    },
+    {
+        "codigo": 765,
+        "materia": "Economía Ambiental",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 767,
+        "materia": "Economía Marxista (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            545
+        ]
+    },
+    {
+        "codigo": 779,
+        "materia": "Tópicos de Macroeconomía (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            548
+        ]
+    },
+    {
+        "codigo": 782,
+        "materia": "Economía Laboral",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            262,
+            291,
+            543
+        ]
+    },
+    {
+        "codigo": 1287,
+        "materia": "Economía Regional y Urbana",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            291
+        ]
+    },
+    {
+        "codigo": 1562,
+        "materia": "Seminario de Integración (Exclusiva)",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": "-",
+        "correlativas": [
+            283,
+            286,
+            546
+        ]
+    },
+    {
+        "codigo": 1721,
+        "materia": "Economía del Comportamiento",
+        "caracter": "Electiva",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": [
+            286
+        ]
+    }
+]

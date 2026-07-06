@@ -1,0 +1,267 @@
+/* Reset básico */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#banner-superior {
+  width: 97%;
+  height: 6%;
+  margin-right: 8px;
+  padding: 16px 24px;
+  color: #fff;
+  background: #111827;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  z-index: 10;
+}
+
+#banner-superior label {
+  font-weight: 500;
+}
+
+.resaltado {
+  border-color: #FF5733;
+  background-color: #f0f0f0;
+  color:#FF5733;
+}
+
+#detalles {
+  display: none;
+}
+
+.contenedor-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 20px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  max-width: 800px;
+}
+
+/* Fila superior: materia + nota y botones */
+.fila-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+/* Título de la materia */
+.materia {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 1.5%;
+  flex-grow: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* Info secundaria */
+.fila-inferior {
+  font-size: 0.9em;
+}
+
+/* Acciones: input + íconos */
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+#contenedor-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#opciones {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  background-color: #111827;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  /*font-weight: bold;*/
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+}
+
+#registro, #nota, #aplazos {
+  height: 20px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  background-color: #111827;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+.fa-solid {
+  border: 1px solid #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fa-solid:hover {
+  border-color: #FF5733;
+  background-color: #f0f0f0;
+  color:#FF5733;
+}
+
+/* Estilo base */
+#contenedor-derecha {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  padding: 12px 20px;
+  z-index: 999;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#contenedor-derecha label{
+  font-weight: 500;
+}
+
+/* #aplazos {
+  width: 12%;
+} */
+
+
+
+
+/* Responsivo para pantallas menores a 768px */
+@media screen and (max-width: 768px) {
+  .contenedor-derecha {
+    position: static;
+    transform: none;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    box-shadow: none;
+    padding: 10px;
+    margin-top: 10px;
+  }
+}
+
+
+
+/* Estilo del contenedor principal del diagrama */
+#myDiagramDiv {
+  width: 100%;
+  height: 94%; /* 77% si va a haber footer */ 
+  background-color: #1f2937;
+  position: relative;
+}
+
+.switch {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  z-index: 999;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Ocultar checkbox real */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider base */
+.slider {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 50px;
+  transition: background-color 0.4s;
+}
+
+/* Botón circular (contenedor del icono) */
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+  z-index: 1;
+}
+
+/* Íconos posicionados dentro del botón */
+.icon-left, .icon-right {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF5733;
+  pointer-events: none;
+  z-index: 2;
+  left: 4px;
+  bottom: 4px;
+  transition: transform 0.4s, opacity 0.3s;
+}
+
+/* Mover el slider y el icono */
+input:checked + .slider {
+  background-color: #FF5733; /* #2672ec */
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/* Mueve el ícono con el botón */
+input:checked + .slider .icon-left {
+  opacity: 0;
+  transform: translateX(26px);
+}
+
+input:checked + .slider .icon-right {
+  opacity: 1;
+  transform: translateX(26px);
+}
+
+/* Estado por defecto (luna visible, sol oculto) */
+.slider .icon-left {
+  opacity: 1;
+}
+
+.slider .icon-right {
+  opacity: 0;
+}

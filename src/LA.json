@@ -1,0 +1,611 @@
+[
+    {
+        "codigo": 241,
+        "materia": "Análisis Matemático I",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": []
+    },
+    {
+        "codigo": 242,
+        "materia": "Economía",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 245,
+        "materia": "Álgebra",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 246,
+        "materia": "Historia Económica y Social General",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 252,
+        "materia": "Administración General",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 254,
+        "materia": "Sociología de las Organizaciones",
+		"categoria": "Primer Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 247,
+        "materia": "Teoría Contable",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Contabilidad",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 248,
+        "materia": "Estadística I",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 250,
+        "materia": "Microeconomía I",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 274,
+        "materia": "Sistemas Administrativos",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+	    {
+        "codigo": 462,
+        "materia": "Derecho Empresarial",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Derecho",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 463,
+        "materia": "Gestión de Tecnologías Digitales",
+		"categoria": "Segundo Tramo",
+        "caracter": "Obligatoria",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 276,
+        "materia": "Cálculo Financiero",
+        "categoria": "Ciclo Profesional",
+		"caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 278,
+        "materia": "Macroeconomía y Política Económica",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Economía",
+        "hs_semanales": 6,
+        "correlativas": [
+            250
+        ]
+    },
+    {
+        "codigo": 279,
+        "materia": "Administración Financiera",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": [
+            276
+        ]
+    },
+    {
+        "codigo": 464,
+        "materia": "Gestión de Costos",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Contabilidad",
+        "hs_semanales": 4,
+        "correlativas": [
+            247
+        ]
+    },
+    {
+        "codigo": 465,
+        "materia": "Métodos Predictivos para la Gestión",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Matemática",
+        "hs_semanales": 4,
+        "correlativas": [
+            248
+        ]
+    },
+    {
+        "codigo": 466,
+        "materia": "Administración de Operaciones",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": [
+            274
+        ]
+    },
+    {
+        "codigo": 467,
+        "materia": "Gestión del Talento",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 468,
+        "materia": "Administración Tributaria",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Tributación",
+        "hs_semanales": 4,
+        "correlativas": [
+            278
+        ]
+    },
+    {
+        "codigo": 469,
+        "materia": "Marketing",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": [
+            466
+        ]
+    },
+    {
+        "codigo": 470,
+        "materia": "Ciencias de la Decisión",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": [
+            465
+        ]
+    },
+    {
+        "codigo": 471,
+        "materia": "Planeamiento Estratégico",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": [
+            279
+        ]
+    },
+    {
+        "codigo": 472,
+        "materia": "Dirección",
+		"categoria": "Ciclo Profesional",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": [
+            467,
+            470
+        ]
+    },
+    {
+        "codigo": "#1",
+        "materia": "ELECTIVA u OPTATIVA (Orientación)",
+        "categoria": "Ciclo Profesional Orientado",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": "#2",
+        "materia": "ELECTIVA u OPTATIVA (Orientación)",
+        "categoria": "Ciclo Profesional Orientado",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": "#3",
+        "materia": "ELECTIVA u OPTATIVA (Competencia)",
+        "categoria": "Ciclo Profesional Orientado",
+        "caracter": "Obligatoria",
+        "departamento": "-",
+        "hs_semanales": 4,
+        "correlativas": ["*"]
+    },
+    {
+        "codigo": 473,
+        "materia": "Práctica Profesional del Lic. en Administración",
+		"categoria": "Ciclo Profesional Orientado",
+        "caracter": "Obligatoria",
+        "departamento": "Administración",
+        "hs_semanales": 6,
+        "correlativas": ["**"]
+    },
+    {
+        "codigo": 474,
+        "materia": "Gestión de la Comunicación Política e Institucional",
+        "caracter": "Electiva",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            278
+        ]
+    },
+    {
+        "codigo": 475,
+        "materia": "Historia Económica - Institucional Argentina",
+        "caracter": "Electiva",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": [
+            278
+        ]
+    },
+    {
+        "codigo": 719,
+        "materia": "Gestión de Políticas Públicas en el Contexto Socioeconómico (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 721,
+        "materia": "Poder Económico y Derechos Humanos (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Humanidades",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 794,
+        "materia": "Administración Pública",
+        "caracter": "Electiva",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            278
+        ]
+    },
+    {
+        "codigo": 1374,
+        "materia": "Contabilidad Gubernamental y Control de Gestión (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Contabilidad",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 1708,
+        "materia": "Economía y Delito",
+        "caracter": "Electiva",
+        "departamento": "Derecho",
+        "hs_semanales": 4,
+        "correlativas": [
+            278
+        ]
+    },
+    {
+        "codigo": 476,
+        "materia": "Creatividad",
+        "caracter": "Electiva",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            279
+        ]
+    },
+    {
+        "codigo": 477,
+        "materia": "Logística",
+        "caracter": "Electiva",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            279
+        ]
+    },
+    {
+        "codigo": 478,
+        "materia": "Gestión PyME",
+        "caracter": "Electiva",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            279
+        ]
+    },
+    {
+        "codigo": 479,
+        "materia": "Negocios Internacionales",
+        "caracter": "Electiva",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            279
+        ]
+    },
+    {
+        "codigo": 486,
+        "materia": "Dinámica Estratégica Empresarial (vigente en 2025)",
+        "caracter": "Optativa",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 733,
+        "materia": "Emprendedor 21 (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 790,
+        "materia": "Teoría de la Demanda",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            279
+        ]
+    },
+    {
+        "codigo": 480,
+        "materia": "Administración del Deporte",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            466
+        ]
+    },
+    {
+        "codigo": 481,
+        "materia": "Administración de la Educación",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            466
+        ]
+    },
+    {
+        "codigo": 482,
+        "materia": "Gestión Estratégica para la Transformación Social",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            466
+        ]
+    },
+    {
+        "codigo": 487,
+        "materia": "Perspectivas Globales para Sectores Estratégicos (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 732,
+        "materia": "Administración del Turismo (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 749,
+        "materia": "Administración de la Salud",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            466
+        ]
+    },
+    {
+        "codigo": 764,
+        "materia": "Gestión en la Economía Social (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Economía",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 1797,
+        "materia": "Administración de la Cultura (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 483,
+        "materia": "Comunicación",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            467
+        ]
+    },
+    {
+        "codigo": 484,
+        "materia": "Oratoria",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            467
+        ]
+    },
+    {
+        "codigo": 488,
+        "materia": "Estrategia (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 489,
+        "materia": "Liderazgo Organizacional (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 707,
+        "materia": "Negociación",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            467
+        ]
+    },
+    {
+        "codigo": 718,
+        "materia": "Calidad y Productividad (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 791,
+        "materia": "Seminario Ética de las Ocupaciones (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 795,
+        "materia": "Conducción de Equipos de Trabajo",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            467
+        ]
+    },
+    {
+        "codigo": 1710,
+        "materia": "Psicología Organizacional (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 485,
+        "materia": "Fintech, Pagos Digitales y Criptoactivos",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            465
+        ]
+    },
+    {
+        "codigo": 701,
+        "materia": "Analítica de Datos (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 702,
+        "materia": "Auditoría de Sistemas de Información (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Sistemas",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 706,
+        "materia": "Marketing Digital (vigente en 2025)",
+        "caracter": "Optativa (**)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": []
+    },
+    {
+        "codigo": 1709,
+        "materia": "E Commerce",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            465
+        ]
+    },
+    {
+        "codigo": 1711,
+        "materia": "Gestión de la Inteligencia Artificial",
+        "caracter": "Electiva (*)",
+        "departamento": "Administración",
+        "hs_semanales": 4,
+        "correlativas": [
+            465
+        ]
+    }
+]
