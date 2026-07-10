@@ -42,19 +42,20 @@
 
 					<div class="form-group">
 						<label class="form-label" for="registro">Registro:</label>
-						<input id="registro" class="form-input" type="text" inputmode="numeric" placeholder="Registro n°" aria-label="Número de registro">
-					</div>
-
-					<div class="header-actions">
-						<button id="buscar" class="icon-button" type="button" aria-label="Buscar alumno" title="Buscar alumno">
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</button>
-						<button id="guardar" class="icon-button success" type="button" aria-label="Guardar cambios" title="Guardar cambios">
-							<i class="fa-solid fa-floppy-disk"></i>
-						</button>
-						<button id="eliminar" class="icon-button danger" type="button" aria-label="Eliminar registro" title="Eliminar registro">
-							<i class="fa-solid fa-trash"></i>
-						</button>
+						<div class="registro-row">
+							<input id="registro" class="form-input" type="text" inputmode="numeric" placeholder="Registro n°" aria-label="Número de registro">
+							<div class="header-actions">
+								<button id="buscar" class="icon-button" type="button" aria-label="Buscar alumno" title="Buscar alumno">
+									<i class="fa-solid fa-magnifying-glass"></i>
+								</button>
+								<button id="guardar" class="icon-button success" type="button" aria-label="Guardar cambios" title="Guardar cambios">
+									<i class="fa-solid fa-floppy-disk"></i>
+								</button>
+								<button id="eliminar" class="icon-button danger" type="button" aria-label="Eliminar registro" title="Eliminar registro">
+									<i class="fa-solid fa-trash"></i>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -106,7 +107,7 @@
 					</div>
 
 					<div class="header-theme">
-						<button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema claro/oscuro">
+						<button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar a tema claro" title="Cambiar a tema claro">
 							<i class="fa-regular fa-moon icon-moon"></i>
 							<i class="fa-regular fa-sun icon-sun"></i>
 						</button>

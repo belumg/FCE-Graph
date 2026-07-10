@@ -222,6 +222,10 @@
 		min-height: 40px;
 	}
 
+	.icon-button {
+		height: 40px;
+	}
+
 	.header-left {
 		display: flex;
 		flex-direction: row;
@@ -267,10 +271,6 @@
 
 	.header-left .form-group {
 		flex: 0 1 auto;
-	}
-
-	.header-actions {
-		align-self: flex-end;
 	}
 
 	.header-center {

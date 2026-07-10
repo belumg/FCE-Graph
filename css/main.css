@@ -215,8 +215,8 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 40px;
-	height: 40px;
+	min-width: 36px;
+	height: 36px;
 	padding: var(--spacing-sm);
 	border: 1px solid var(--color-border);
 	border-radius: var(--border-radius-md);
@@ -264,6 +264,20 @@ body {
 	display: flex;
 	gap: var(--spacing-sm);
 	flex-shrink: 0;
+}
+
+/* Fila que agrupa el input de registro junto con los botones de
+   buscar/guardar/eliminar, de modo que ambos queden alineados
+   verticalmente con el texto del input, en cualquier ancho de pantalla. */
+.registro-row {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+.registro-row .form-input {
+	flex: 1;
+	min-width: 0;
 }
 
 /* ============================================

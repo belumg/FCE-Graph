@@ -338,7 +338,7 @@ FCEGraph.app = (function () {
 			return;
 		}
 
-		const confirmado = window.confirm(`¿Seguro que querés eliminar el registro ${registro}? Esta acción no se puede deshacer.`);
+		const confirmado = window.confirm(`¿Seguro que querés eliminar todos los datos asociados al registro ${registro}? Esta acción no se puede deshacer.`);
 		if (!confirmado) return;
 
 		try {
@@ -487,13 +487,26 @@ FCEGraph.app = (function () {
 	function inicializarToggleTema() {
 		const boton = document.getElementById('themeToggle');
 		if (!boton) return;
+
+		function actualizarTooltip() {
+			const esClaroActualmente = document.body.classList.contains('theme-light');
+			// El tooltip siempre describe la acción: a qué tema se cambiará al hacer clic.
+			const proximoTema = esClaroActualmente ? 'oscuro' : 'claro';
+			const texto = `Cambiar a tema ${proximoTema}`;
+			boton.title = texto;
+			boton.setAttribute('aria-label', texto);
+		}
+
 		boton.addEventListener('click', () => {
 			const esClaro = document.body.classList.contains('theme-light');
 			document.body.classList.toggle('theme-light', !esClaro);
 			document.body.classList.toggle('theme-dark', esClaro);
 			boton.classList.toggle('light', !esClaro);
 			FCEGraph.diagrama.cambiarTema();
+			actualizarTooltip();
 		});
+
+		actualizarTooltip();
 	}
 
 	return {
