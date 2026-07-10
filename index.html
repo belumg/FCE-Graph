@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 	<title>FCE Graph</title>
-	<link rel="icon" href="icon.png" type="image/png">
+	<link rel="icon" href="assets/icon.png" type="image/png">
 
 	<!-- URL base de la API. Editar este valor al desplegar el backend. -->
 	<meta name="api-base-url" content="http://localhost:5000">
@@ -16,9 +16,9 @@
 
 	<script src="https://unpkg.com/gojs/release/go.js"></script>
 
-	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="theme.css">
-	<link rel="stylesheet" href="responsive.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/theme.css">
+	<link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body class="theme-dark">
@@ -46,13 +46,13 @@
 					</div>
 
 					<div class="header-actions">
-						<button id="buscar" class="icon-button" type="button" aria-label="Buscar alumno">
+						<button id="buscar" class="icon-button" type="button" aria-label="Buscar alumno" title="Buscar alumno">
 							<i class="fa-solid fa-magnifying-glass"></i>
 						</button>
-						<button id="guardar" class="icon-button success" type="button" aria-label="Guardar cambios">
+						<button id="guardar" class="icon-button success" type="button" aria-label="Guardar cambios" title="Guardar cambios">
 							<i class="fa-solid fa-floppy-disk"></i>
 						</button>
-						<button id="eliminar" class="icon-button danger" type="button" aria-label="Eliminar registro">
+						<button id="eliminar" class="icon-button danger" type="button" aria-label="Eliminar registro" title="Eliminar registro">
 							<i class="fa-solid fa-trash"></i>
 						</button>
 					</div>
@@ -119,12 +119,23 @@
 		<div class="diagram-container">
 			<main id="myDiagramDiv" class="diagram"></main>
 		</div>
+
+		<!-- Acciones flotantes: contacto y agradecimiento -->
+		<div class="floating-actions" id="floating-actions">
+			<a class="icon-button floating-action" id="agradecer" href="https://cafecito.app/belu-mg" target="_blank" rel="noopener" aria-label="Invitame un café / Agradecer" title="Invitame un café">
+				<i class="fa-solid fa-mug-hot"></i>
+			</a>
+		</div>
 	</div>
 
-	<script src="config.js"></script>
-	<script src="set_diagram.js"></script>
-	<script src="load_data.js"></script>
-	<script src="functions.js"></script>
-	<script src="animations.js"></script>
+	<!-- Contenedor de notificaciones (toasts) -->
+	<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+	<script src="js/config.js"></script>
+	<script src="js/diagram.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/notificaciones.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/animations.js"></script>
 </body>
 </html>

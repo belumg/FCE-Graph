@@ -339,9 +339,17 @@ FCEGraph.diagrama = (function () {
 	function reencuadrarDiagrama() {
 		instancia.requestUpdate();
 		instancia.zoomToFit();
-		// Evita un zoom excesivo cuando el contenedor queda muy chico
-		// (por ejemplo, con el teclado virtual abierto en un celular).
-		if (instancia.scale > 1) instancia.scale = 1;
+		// Factor de "alejamiento" adicional: zoomToFit calza el grafo
+		// justo dentro de los bordes del contenedor, así que reducimos
+		// un poco más la escala para dejar aire alrededor y que no se
+		// vea pegado a los bordes de la pantalla.
+		instancia.scale = instancia.scale * 0.85;
+		// En pantallas grandes evitamos que el diagrama se agrande de más
+		// (no tiene sentido ir más allá del tamaño "natural" de los nodos).
+		// En vista reducida (contenedor angosto/celular) sí dejamos que
+		// zoomToFit achique todo lo necesario para que el grafo entre
+		// completo, en vez de recortarlo con un límite fijo.
+		if (instancia.scale > 0.85) instancia.scale = 0.85;
 		instancia.alignDocument(go.Spot.Center, go.Spot.Center);
 	}
 

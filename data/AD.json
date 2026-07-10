@@ -1,133 +1,133 @@
 [
     {
-        "codigo": 1,
+        "codigo": 241,
         "materia": "Análisis Matemático",
 	    "categoria": "Primer Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Matemática",
         "hs_semanales": 6,
         "correlativas": []
     },
     {
-        "codigo": 2,
+        "codigo": 245,
         "materia": "Álgebra",
 	    "categoria": "Primer Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Matemática",
         "hs_semanales": 4,
         "correlativas": []
     },
     {
-        "codigo": 3,
+        "codigo": 80,
         "materia": "Trabajo y Sociedad",
 	    "categoria": "Primer Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Humanidades",
         "hs_semanales": 4,
         "correlativas": []
     },
     {
-        "codigo": 4,
+        "codigo": 81,
         "materia": "Estadística",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Matemática",
         "hs_semanales": 6,
         "correlativas": ["*"]
     },
     {
-        "codigo": 5,
+        "codigo": 82,
         "materia": "Fundamentos de Sistemas de Información Digitales",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Sistemas",
         "hs_semanales": 4,
         "correlativas": ["*"]
     },
     {
-        "codigo": 6,
+        "codigo": 83,
         "materia": "Laboratorio de Métodos Cuantitativos Aplicados a la Gestión",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Matemática",
         "hs_semanales": 6,
         "correlativas": ["*"]
     },
     {
-        "codigo": 7,
+        "codigo": 84,
         "materia": "Métodos Predictivos para la Gestión",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Matemática",
         "hs_semanales": 6,
         "correlativas": [
-            4,
-            6
+            81,
+            83
         ]
     },
     {
-        "codigo": 8,
+        "codigo": 85,
         "materia": "Diseño y Gestión de Bases de Datos",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Sistemas",
         "hs_semanales": 4,
         "correlativas": [
-            5,
-            6
+            82,
+            83
         ]
     },
     {
-        "codigo": 9,
+        "codigo": 86,
         "materia": "Taller de Programación para el Análisis de Datos",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Sistemas",
         "hs_semanales": 6,
         "correlativas": [
-            4,
-            6
+            81,
+            83
         ]
     },
     {
-        "codigo": 10,
+        "codigo": 87,
         "materia": "Soluciones de Inteligencia de Negocios y Analítica de Datos",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Sistemas",
         "hs_semanales": 4,
         "correlativas": [
-            7,
-            8,
-            9
+            84,
+            85,
+            86
         ]
     },
     {
-        "codigo": 11,
+        "codigo": 88,
         "materia": "Técnicas de Gestión y Análisis de Datos No Estructurados",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Sistemas",
         "hs_semanales": 6,
         "correlativas": [
-            7,
-            8,
-            9
+            84,
+            85,
+            86
         ]
     },
     {
-        "codigo": 12,
+        "codigo": 89,
         "materia": "Técnicas de Inteligencia Artificial en Organizaciones",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Sistemas",
         "hs_semanales": 6,
         "correlativas": [
-            7,
-            8,
-            9
+            84,
+            85,
+            86
         ]
     },
     {
-        "codigo": 13,
+        "codigo": 90,
         "materia": "Prácticas Profesionalizantes",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Sistemas",
         "hs_semanales": 14,
         "correlativas": [
-            10,
-            11
+            87,
+            88
         ]
     }
 ]

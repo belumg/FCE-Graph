@@ -329,9 +329,10 @@ body {
 
 .info-item {
 	display: flex;
-	align-items: center;
+	align-items: baseline;
 	gap: var(--spacing-sm);
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
+	white-space: nowrap;
 }
 
 .info-label {
@@ -370,6 +371,25 @@ body {
 	justify-content: space-between;
 	gap: var(--spacing-md);
 	white-space: nowrap;
+}
+
+/* ============================================
+   FLOATING ACTIONS (contacto / agradecer)
+   ============================================ */
+
+.floating-actions {
+	position: fixed;
+	right: var(--spacing-lg);
+	bottom: var(--spacing-lg);
+	display: flex;
+	gap: var(--spacing-sm);
+	z-index: 50;
+}
+
+.floating-action {
+	background-color: var(--color-bg-secondary);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	text-decoration: none;
 }
 
 /* ============================================

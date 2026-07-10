@@ -6,29 +6,38 @@ de la Facultad de Ciencias Económicas, con seguimiento de avance por alumno.
 ## Estructura del proyecto
 
 ```
-├── app.py              # Backend Flask: application factory + rutas
-├── config.py            # Configuración centralizada (backend)
-├── modelos.py            # Validación y acceso a datos (repositorio de alumnos)
-├── requirements.txt
-├── .env.example
+FCE-Graph/
+├── backend/                   # API REST (Flask + MongoDB)
+│   ├── app.py                 # Application factory + rutas
+│   ├── config.py              # Configuración centralizada (variables de entorno)
+│   ├── modelos.py             # Validación y acceso a datos (repositorio de alumnos)
+│   ├── scrapper_carreras.py   # Herramienta auxiliar de generación de datos (no es parte del runtime)
+│   ├── requirements.txt
+│   └── .env.example
 │
-├── index.html            # Frontend (estructura de clases BEM-like)
-├── config.js             # Configuración global del frontend (namespace FCEGraph)
-├── set_diagram.js        # Configuración del diagrama GoJS (temas, nodos, enlaces)
-├── load_data.js          # Carga de datos de carreras y cálculo de correlativas
-├── functions.js          # Lógica de negocio, UI del banner, llamadas a la API
-├── animations.js         # Animación de confeti al completar la carrera
-├── main.css              # Variables CSS, layout base y componentes
-├── theme.css             # Temas claro/oscuro (clases body.theme-dark / body.theme-light)
-├── responsive.css        # Breakpoints, orientación, accesibilidad táctil y layout del diagrama
-├── icon.png
-├── images/
-└── src/                  # JSON de cada carrera + layout.json
+├── index.html                 # Cliente estático (sin build)
+├── css/
+│   ├── main.css               # Variables CSS, layout base y componentes
+│   ├── theme.css              # Temas claro/oscuro
+│   └── responsive.css         # Breakpoints, orientación, accesibilidad táctil
+├── js/
+│   ├── config.js              # Configuración global del frontend (namespace FCEGraph)
+│   ├── diagram.js             # Configuración del diagrama GoJS (temas, nodos, enlaces)
+│   ├── data.js                # Carga de datos de carreras y cálculo de correlativas
+│   ├── app.js                 # Lógica de negocio, UI del banner, llamadas a la API
+│   └── animations.js          # Animación de confeti al completar la carrera
+├── assets/
+│   ├── icon.png
+│   └── images/                # Imágenes auxiliares por carrera
+├── data/                       # JSON de cada carrera + layout.json
+│
+└── README.md
 ```
 
 ## Backend — instalación y ejecución local
 
 ```bash
+cd backend
 python3 -m venv venv
 source venv/bin/activate        # En Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -40,6 +49,7 @@ python app.py                   # Modo desarrollo
 Para producción, usar un servidor WSGI como `gunicorn` (incluido en requirements.txt):
 
 ```bash
+cd backend
 gunicorn -w 4 -b 0.0.0.0:5000 app:app
 ```
 
@@ -66,32 +76,38 @@ gunicorn -w 4 -b 0.0.0.0:5000 app:app
 ## Frontend — instalación y despliegue
 
 El frontend es estático (HTML/CSS/JS), no requiere build. Puede servirse con
-cualquier servidor de archivos estáticos (Nginx, Vercel, Netlify, GitHub Pages, etc.).
+cualquier servidor de archivos estáticos (Nginx, Vercel, Netlify, GitHub Pages, etc.)
+apuntando a la raíz del proyecto (donde está `index.html`).
 
-**Importante:** antes de desplegar, editar en `index.html` el `<meta>` con la
-URL pública del backend:
+Para desarrollo local, por ejemplo:
+
+```bash
+python3 -m http.server 8080
+```
+
+**Importante:** antes de desplegar, editar en `index.html` el `<meta>`
+con la URL pública del backend:
 
 ```html
 <meta name="api-base-url" content="https://tu-backend-en-produccion.com">
 ```
 
 Todas las llamadas a la API leen esta URL desde `FCEGraph.URL_BASE_API`
-(definida en `config.js`), por lo que no es necesario tocar ningún otro archivo.
+(definida en `js/config.js`), por lo que no es necesario tocar ningún otro archivo.
 
 ## Diseño responsive
 
-Los estilos (`estilos.css`) están escritos mobile-first:
+Los estilos (`css/responsive.css`) están escritos mobile-first:
 - Layout en columna con `flex-wrap` en el banner superior para pantallas angostas.
 - Botones táctiles con áreas de toque adecuadas.
 - Switch de tema reubicado como botón flotante inferior-derecho en mobile,
   y superior-derecho en pantallas ≥768px.
 - El lienzo del diagrama (GoJS) ocupa el espacio disponible restante
   usando flexbox y `100dvh`, evitando saltos por la barra de direcciones móvil.
+- El bloque de detalle de la materia seleccionada (`subject-details`) se
+  centra en la vista mobile (`max-width: 640px`).
 
 ## Sistema de estilos (main.css / theme.css / responsive.css)
-
-Esta versión reemplaza el `estilos.css` original por un sistema de tres
-archivos con variables CSS y clases semánticas:
 
 - **`main.css`**: variables (`:root`), reset, layout base y componentes
   (`.form-select`, `.icon-button`, `.student-info`, `.theme-toggle`, etc.).
@@ -103,49 +119,48 @@ archivos con variables CSS y clases semánticas:
   `min-height: 0` en la cadena flex) y el estado inicial de los componentes
   dinámicos del banner (panel de detalle oculto, acciones de materia ocultas).
 
-El HTML se reestructuró con las clases que estos archivos esperan
-(`.app-container`, `.main-header`, `.header-left/center/right`, `.form-group`,
-`.subject-details`, etc.), conservando los mismos `id` que usa la lógica en
-`functions.js`, `set_diagram.js` y `load_data.js` — por lo que toda la
-funcionalidad (buscar, guardar, eliminar, aprobar materias, promedio,
-cambio de tema, confeti) sigue intacta.
+El HTML usa las clases que estos archivos esperan (`.app-container`,
+`.main-header`, `.header-left/center/right`, `.form-group`, `.subject-details`,
+etc.), y conserva los `id` que usa la lógica en `app.js`, `diagram.js` y
+`data.js` — por lo que toda la funcionalidad (buscar, guardar, eliminar,
+aprobar materias, promedio, cambio de tema, confeti) se mantiene intacta.
 
-El botón de cambio de tema pasó de ser un checkbox con `onchange` inline a
-un `<button>` con listener en `functions.js`, que alterna las clases
-`theme-dark`/`theme-light` en `<body>` y sincroniza el tema del diagrama GoJS.
+## Arquitectura del frontend
 
+El frontend vive bajo un único namespace global `FCEGraph` (definido en
+`js/config.js`), evitando variables globales sueltas y colisiones de nombres.
+Cada módulo se cuelga de ese namespace y expone una API pública explícita:
 
+- **`config.js`** → `FCEGraph` (constantes, límites, estado de sesión).
+- **`diagram.js`** → `FCEGraph.diagrama` (instancia GoJS, temas, plantillas
+  de nodos/enlaces, resaltado, reencuadre responsive).
+- **`data.js`** → `FCEGraph.datos` (carga de carreras, cálculo de
+  correlativas/estado, materia seleccionada).
+- **`app.js`** → `FCEGraph.app` (validaciones, lógica de negocio de notas y
+  promedio, eventos de UI, comunicación con la API REST).
+- **`animations.js`** → efecto de confeti (`window.lanzar_confeti` /
+  `window.detener_confeti`), independiente del namespace `FCEGraph`.
 
-- El frontend ahora vive bajo un único namespace `FCEGraph` (en `config.js`),
-  evitando variables globales sueltas y colisiones de nombres.
-- Los nombres de variables originales se conservaron y se tradujeron a
-  español consistente donde correspondía (sin mezclar idiomas).
-- El backend separa configuración (`config.py`), validación/persistencia
-  (`modelos.py`) y rutas (`app.py`), con manejo de errores centralizado
-  y validaciones explícitas (antes ausentes en `PUT` y `POST`).
+Orden de carga en `index.html`: `config.js` → `diagram.js` → `data.js` →
+`app.js` → `animations.js` (cada módulo depende de que el anterior ya esté
+definido en `window.FCEGraph`).
+
+## Arquitectura del backend
+
+El backend separa configuración (`config.py`), validación/persistencia
+(`modelos.py`) y rutas (`app.py`), con manejo de errores centralizado y
+validaciones explícitas en `POST`/`PUT`. `scrapper_carreras.py` es una
+herramienta auxiliar de generación de datos (no forma parte del runtime
+desplegado): su salida (`<carrera>.json`) debe copiarse manualmente a
+`data/`.
+
+## Notas de diseño
+
 - Se eliminó el `<?= Date.now() ?>` (sintaxis de PHP inválida en HTML estático)
   y se resolvió el cache-busting de scripts server-side; los datos JSON
-  (`src/*.json`) siguen usando cache-busting por query string en runtime.
-- `scrapper_carreras.py` es una herramienta auxiliar de generación de datos
-  (no forma parte del runtime desplegado) y se mantiene sin cambios.
-
-## Ajustes de esta versión
-
-- **Zoom del diagrama en pantallas muy comprimidas:** se reforzó el
-  reencuadre automático (`zoomToFit` + `alignDocument`) en `set_diagram.js`
-  para que también reaccione a `orientationchange` y a `visualViewport`
-  (cambios de altura por la barra de direcciones o el teclado virtual en
-  mobile), además del `resize` de ventana y el `ResizeObserver` del
-  contenedor. También se usa `100dvh` en el layout (sección final de
-  `responsive.css`) para que el diagrama disponga de toda la altura real
-  visible en mobile, evitando que quede con scroll interno en vez de
-  encajar en pantalla.
-- **Switch de tema compacto en mobile:** dentro del propio breakpoint
-  mobile de `responsive.css` (`max-width: 640px`), el `.theme-toggle`
-  mantiene su tamaño de píldora fijo (60px) en vez de estirarse al 100%
-  del ancho, igual que en la vista de escritorio.
-- Los ajustes que antes vivían en un archivo aparte (`integracion.css`)
-  se fusionaron dentro de `responsive.css`, en sus propias secciones al
-  final del archivo, para evitar tener una cuarta hoja de estilos suelta.
-
-
+  (`data/*.json`) siguen usando cache-busting por query string en runtime.
+- **Zoom del diagrama en pantallas muy comprimidas:** el reencuadre automático
+  (`zoomToFit` + `alignDocument`) en `diagram.js` reacciona a `resize`,
+  `orientationchange`, `visualViewport` (cambios de altura por la barra de
+  direcciones o el teclado virtual en mobile) y a un `ResizeObserver` sobre
+  el contenedor del diagrama.

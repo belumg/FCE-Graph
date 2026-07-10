@@ -4,7 +4,7 @@
         "materia": "Análisis Matemático I",
 		"categoria": "Primer Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Matemática",
         "hs_semanales": 6,
         "correlativas": []
     },
@@ -13,7 +13,7 @@
         "materia": "Economía",
         "categoria": "Primer Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Economía",
         "hs_semanales": 4,
         "correlativas": []
     },
@@ -22,7 +22,7 @@
         "materia": "Sociología",
         "categoria": "Primer Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Humanidades",
         "hs_semanales": 4,
         "correlativas": []
     },
@@ -31,7 +31,7 @@
         "materia": "Metodología de las Ciencias Sociales",
         "categoria": "Primer Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Humanidades",
         "hs_semanales": 4,
         "correlativas": []
     },
@@ -40,7 +40,7 @@
         "materia": "Álgebra",
         "categoria": "Primer Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Matemática",
         "hs_semanales": 4,
         "correlativas": []
     },
@@ -49,7 +49,7 @@
         "materia": "Historia Económica y Social General",
 		"categoria": "Primer Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Humanidades",
         "hs_semanales": 4,
         "correlativas": []
     },
@@ -58,7 +58,7 @@
         "materia": "Estadística I",
 		"categoria": "Segundo Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Matemática",
         "hs_semanales": 6,
         "correlativas": ["*"]
     },
@@ -67,7 +67,7 @@
         "materia": "Administración General",
 		"categoria": "Segundo Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Administración",
         "hs_semanales": 4,
         "correlativas": ["*"]
     },
@@ -76,7 +76,7 @@
         "materia": "Historia Económica y Social Argentina",
 		"categoria": "Segundo Tramo",
 		"caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Humanidades",
         "hs_semanales": 4,
         "correlativas": ["*"]
     },
@@ -85,7 +85,7 @@
         "materia": "Microeconomía I",
 		"categoria": "Segundo Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Economía",
         "hs_semanales": 4,
         "correlativas": ["*"]
     },
@@ -94,7 +94,7 @@
         "materia": "Instituciones de Derecho Público",
 		"categoria": "Segundo Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Derecho",
         "hs_semanales": 4,
         "correlativas": ["*"]
     },
@@ -103,7 +103,7 @@
         "materia": "Teoría Contable",
 		"categoria": "Segundo Tramo",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 6,
         "correlativas": ["*"]
     },
@@ -112,7 +112,7 @@
         "materia": "Instituciones de Derecho Privado",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Derecho",
         "hs_semanales": 4,
         "correlativas": [
             1359
@@ -123,7 +123,7 @@
         "materia": "Sistemas Administrativos",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Administración",
         "hs_semanales": 4,
         "correlativas": [
             252
@@ -134,7 +134,7 @@
         "materia": "Tecnología de la Información",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Sistemas",
         "hs_semanales": 6,
         "correlativas": [
             274
@@ -145,7 +145,7 @@
         "materia": "Cálculo Financiero",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Matemática",
         "hs_semanales": 4,
         "correlativas": [
             248
@@ -156,7 +156,7 @@
         "materia": "Macroeconomía y Política Económica",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Economía",
         "hs_semanales": 6,
         "correlativas": ["*"]
     },
@@ -165,7 +165,7 @@
         "materia": "Administración Financiera",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Administración",
         "hs_semanales": 6,
         "correlativas": [
             276
@@ -176,7 +176,7 @@
         "materia": "Sistemas Contables",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 6,
         "correlativas": [
             247
@@ -187,7 +187,7 @@
         "materia": "Sistemas de Costos",
         "categoria": "Ciclo Profesional",
 		"caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 4,
         "correlativas": [
             247
@@ -198,7 +198,7 @@
         "materia": "Derecho del Trabajo y la Seguridad Social",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Derecho",
         "hs_semanales": 4,
         "correlativas": [
 			251,
@@ -210,7 +210,7 @@
         "materia": "Auditoría",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 6,
         "correlativas": [
 			362,
@@ -222,7 +222,7 @@
         "materia": "Teoría y Técnica Impositiva I",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Tributación",
         "hs_semanales": 6,
         "correlativas": [
 			251,
@@ -234,7 +234,7 @@
         "materia": "Teoría y Técnica Impositiva II",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Tributación",
         "hs_semanales": 6,
         "correlativas": [
             356
@@ -245,7 +245,7 @@
         "materia": "Gestión y Costos para Contadores",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 6,
         "correlativas": [
             353
@@ -256,7 +256,7 @@
         "materia": "Contabilidad Social y Ambiental",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 2,
         "correlativas": [
             1352
@@ -267,7 +267,7 @@
         "materia": "Contabilidad Financiera",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 6,
         "correlativas": [
 			351,
@@ -279,7 +279,7 @@
         "materia": "Derecho Económico",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Derecho",
         "hs_semanales": 4,
         "correlativas": ["*"]
     },
@@ -288,7 +288,7 @@
         "materia": "Derecho Crediticio, Bursátil e Insolvencia",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Derecho",
         "hs_semanales": 4,
         "correlativas": [
 			273, 354
@@ -299,7 +299,7 @@
         "materia": "Contabilidad Gubernamental y Control de Gestión",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 4,
         "correlativas": [
 			278,
@@ -320,7 +320,7 @@
         "materia": "Taller de Actuación Profesional Judicial",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 4,
         "correlativas": [
 			355,
@@ -332,7 +332,7 @@
         "materia": "Taller de Práctica Profesional en Organizaciones",
         "categoria": "Ciclo Profesional",
         "caracter": "Obligatoria",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 6,
         "correlativas": [
             273,
@@ -345,7 +345,7 @@
         "codigo": 721,
         "materia": "Poder Económico y Derechos Humanos",
         "caracter": "Electiva",
-        "departamento": "",
+        "departamento": "Humanidades",
         "hs_semanales": 4,
         "correlativas": []
     },
@@ -353,7 +353,7 @@
         "codigo": 749,
         "materia": "Administración de la Salud",
         "caracter": "Electiva",
-        "departamento": "",
+        "departamento": "Administración",
         "hs_semanales": 4,
         "correlativas": [
             274
@@ -363,7 +363,7 @@
         "codigo": 764,
         "materia": "Gestión en la Economía Social",
         "caracter": "Electiva",
-        "departamento": "",
+        "departamento": "Economía",
         "hs_semanales": 4,
         "correlativas": [
             274
@@ -373,7 +373,7 @@
         "codigo": 768,
         "materia": "Finanzas Públicas",
         "caracter": "Electiva",
-        "departamento": "",
+        "departamento": "Economía",
         "hs_semanales": 4,
         "correlativas": [
             362
@@ -383,7 +383,7 @@
         "codigo": 775,
         "materia": "Seminario de Sindicatura Concursal",
         "caracter": "Electiva",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 4,
         "correlativas": [
             357
@@ -393,7 +393,7 @@
         "codigo": 776,
         "materia": "Planeamiento y Control Presupuestario",
         "caracter": "Electiva",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 4,
         "correlativas": [
             1352
@@ -403,7 +403,7 @@
         "codigo": 786,
         "materia": "Derecho de Seguros",
         "caracter": "Electiva",
-        "departamento": "",
+        "departamento": "Derecho",
         "hs_semanales": 4,
         "correlativas": [
             276
@@ -413,7 +413,7 @@
         "codigo": 794,
         "materia": "Administración Pública",
         "caracter": "Electiva",
-        "departamento": "",
+        "departamento": "Administración",
         "hs_semanales": 4,
         "correlativas": [
             362
@@ -423,7 +423,7 @@
         "codigo": 1708,
         "materia": "Economía y Delito",
         "caracter": "Electiva",
-        "departamento": "",
+        "departamento": "Derecho",
         "hs_semanales": 4,
         "correlativas": []
     },
@@ -431,7 +431,7 @@
         "codigo": 1798,
         "materia": "Contabilidad Financiera Superior",
         "caracter": "Electiva",
-        "departamento": "",
+        "departamento": "Contabilidad",
         "hs_semanales": 4,
         "correlativas": [
             279

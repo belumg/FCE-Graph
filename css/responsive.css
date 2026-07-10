@@ -81,6 +81,17 @@
 		justify-content: flex-start;
 	}
 
+	.floating-actions {
+		right: var(--spacing-sm);
+		bottom: var(--spacing-sm);
+		gap: var(--spacing-xs);
+	}
+
+	.floating-action {
+		min-width: 44px;
+		height: 44px;
+	}
+
 	.theme-toggle {
 		width: 60px;
 	}
@@ -99,16 +110,23 @@
 	/* Details Section - Mobile */
 	.subject-details {
 		width: 100%;
+		align-items: center;
+		text-align: center;
 	}
 
 	.details-header {
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
+	}
+
+	.subject-title {
+		text-align: center;
 	}
 
 	.subject-actions {
 		width: 100%;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	.subject-actions .form-group {
@@ -122,12 +140,14 @@
 
 	.details-info {
 		flex-direction: column;
+		align-items: center;
 		gap: var(--spacing-md);
 	}
 
 	.info-item {
-		flex-direction: column;
-		gap: var(--spacing-xs);
+		flex-wrap: nowrap;
+		white-space: nowrap;
+		justify-content: center;
 	}
 
 	/* Icon buttons - Improve touch targets */
@@ -353,6 +373,17 @@
 	.subject-actions {
 		gap: var(--spacing-xs);
 	}
+
+	.floating-actions {
+		bottom: var(--spacing-xs);
+		right: var(--spacing-xs);
+	}
+
+	.floating-action {
+		min-width: 32px;
+		height: 32px;
+		font-size: var(--font-size-sm);
+	}
 }
 
 /* ============================================
@@ -433,7 +464,8 @@
 @media print {
 	.main-header,
 	.header-actions,
-	.theme-toggle {
+	.theme-toggle,
+	.floating-actions {
 		display: none;
 	}
 

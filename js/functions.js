@@ -7,6 +7,9 @@ FCEGraph.app = (function () {
 	const datos = FCEGraph.datos;
 	const diagrama = FCEGraph.diagrama;
 	let seSeleccionoUnaMateria = false;
+	// Guarda el último valor de aplazos que fue válido, para poder restaurarlo
+	// si el usuario ingresa algo inválido (en vez de resetear siempre a 0).
+	let ultimoAplazosValido = 0;
 
 	/* ---------- Referencias al DOM (cacheadas una sola vez) ---------- */
 
@@ -37,13 +40,22 @@ FCEGraph.app = (function () {
 	}
 
 	function validarNota(valorIngresado) {
+		if (valorIngresado === "" || valorIngresado === null || valorIngresado === undefined) return false;
+		// Number(" ") o Number("") dan 0, y algunos navegadores pueden dejar
+		// pasar espacios o strings vacíos en un input number; nos aseguramos
+		// de que el valor realmente tenga contenido numérico antes de validar.
+		if (typeof valorIngresado === "string" && valorIngresado.trim() === "") return false;
 		const numero = Number(valorIngresado);
+		if (Number.isNaN(numero)) return false;
 		if (numero < FCEGraph.LIMITES.NOTA_MIN || numero > FCEGraph.LIMITES.NOTA_MAX) return false;
 		return Number.isInteger(numero);
 	}
 
 	function validarAplazos(valorIngresado) {
+		if (valorIngresado === "" || valorIngresado === null || valorIngresado === undefined) return false;
+		if (typeof valorIngresado === "string" && valorIngresado.trim() === "") return false;
 		const numero = Number(valorIngresado);
+		if (Number.isNaN(numero)) return false;
 		return Number.isInteger(numero) && numero >= 0;
 	}
 
@@ -52,20 +64,6 @@ FCEGraph.app = (function () {
 	function mostrarElementosDeClase(nombreClase, tipoDisplay) {
 		const lista = document.getElementsByClassName(nombreClase);
 		for (const elemento of lista) elemento.style.display = tipoDisplay;
-	}
-
-	function esperarDiagramaCargado() {
-		return new Promise(resolve => {
-			if (diagrama.instancia.isInitialLayoutCompleted) {
-				resolve();
-				return;
-			}
-			function listener() {
-				diagrama.instancia.removeDiagramListener("InitialLayoutCompleted", listener);
-				resolve();
-			}
-			diagrama.instancia.addDiagramListener("InitialLayoutCompleted", listener);
-		});
 	}
 
 	/* ---------- Lógica de negocio: correlativas y estado ---------- */
@@ -166,25 +164,45 @@ FCEGraph.app = (function () {
 		};
 	}
 
-	function modificarNota(nodo, notaIngresada) {
-		if (notaIngresada === "") {
+	function modificarNota(nodo, notaIngresada, contexto) {
+		// El borrado de nota solo ocurre cuando viene explícitamente desde la
+		// cruz (contexto "quitar"). Si el contexto es "agregar" (Enter o tick),
+		// un campo vacío o con texto no numérico es una entrada inválida, no
+		// una intención de quitar la materia aprobada.
+		if (contexto === "quitar" && notaIngresada === "") {
 			removerMateriaAprobada(nodo);
-			return;
+			return true;
 		}
 		if (validarNota(notaIngresada)) {
 			aprobarMateria(nodo, notaIngresada);
-		} else {
-			elementos.nota.value = "";
-			elementos.nota.focus();
+			return true;
 		}
+		elementos.nota.value = "";
+		elementos.nota.focus();
+		FCEGraph.notificaciones.advertencia('Ingresá una nota válida.');
+		return false;
 	}
 
 	function actualizarNota(nodo, valorNuevo, contexto) {
 		if (!nodo) return;
-		modificarNota(nodo, valorNuevo);
+		const seAplico = modificarNota(nodo, valorNuevo, contexto);
 		actualizarPromedio();
+
+		// Si la nota ingresada no era válida, no hay ningún cambio de estado
+		// que propagar y el usuario debe permanecer en el menú de carga de
+		// nota (con el input ya vacío) para poder reintentar.
+		if (!seAplico) return;
+
 		actualizarEstadoCorrelativas(nodo.data.key, contexto);
 		diagrama.vistaPorDefecto();
+
+		// Tras cargar/quitar una nota (Enter, tick o cruz), el banner vuelve
+		// al estado "sin selección": se oculta el menú especial de nota y se
+		// deselecciona la materia, tanto en el diagrama como en los datos.
+		diagrama.instancia.clearSelection();
+		datos.limpiarMateriaSeleccionada();
+		elementos.detalles.classList.remove("has-selection");
+		mostrarElementosDeClase("subject-actions", "none");
 	}
 
 	/* ---------- Comunicación con el backend ---------- */
@@ -206,7 +224,6 @@ FCEGraph.app = (function () {
 	}
 
 	async function aplicarNotasGuardadas(materiasAprobadasConNota) {
-		await esperarDiagramaCargado();
 		materiasAprobadasConNota.forEach(([codigo, nota]) => {
 			const nodo = diagrama.instancia.findNodeForKey(codigo);
 			if (nodo) actualizarNota(nodo, nota, "agregar");
@@ -225,7 +242,7 @@ FCEGraph.app = (function () {
 	function generarPayloadAlumno() {
 		const registro = elementos.registro.value;
 		const carrera = elementos.opciones.value;
-		const aplazosValidados = validarAplazos(elementos.aplazos.value) ? elementos.aplazos.value : "";
+		const aplazosValidados = validarAplazos(elementos.aplazos.value) ? elementos.aplazos.value : 0;
 
 		FCEGraph.estadoSesion.carrerasDelAlumno[carrera] = encontrarNotasDeMateriasAprobadas();
 
@@ -238,16 +255,26 @@ FCEGraph.app = (function () {
 
 	async function buscarAlumno() {
 		const registro = elementos.registro.value;
-		if (!validarRegistro(registro)) return;
+		if (!validarRegistro(registro)) {
+			elementos.registro.value = "";
+			FCEGraph.notificaciones.advertencia('Ingresá un número de registro válido para buscar.');
+			return;
+		}
 
 		try {
 			const respuesta = await fetch(`${FCEGraph.URL_BASE_API}/alumnos/registro/${registro}`);
-			if (!respuesta.ok) throw new Error('No se encontró un alumno con ese registro.');
+			if (!respuesta.ok) {
+				if (respuesta.status === 404) {
+					FCEGraph.notificaciones.advertencia(`No se encontró ningún alumno con el registro ${registro}.`);
+					return;
+				}
+				throw new Error('No se encontró un alumno con ese registro.');
+			}
 			const alumno = await respuesta.json();
 
 			FCEGraph.estadoSesion.registroActual = alumno.registro;
 			FCEGraph.estadoSesion.carrerasDelAlumno = alumno.carreras || {};
-			FCEGraph.estadoSesion.aplazos = alumno.aplazos ?? "";
+			FCEGraph.estadoSesion.aplazos = alumno.aplazos ?? 0;
 
 			const carreraDeMayorAvance = encontrarCarreraDeMayorAvance(alumno.carreras || {});
 			if (carreraDeMayorAvance) {
@@ -257,15 +284,21 @@ FCEGraph.app = (function () {
 			}
 
 			elementos.aplazos.value = FCEGraph.estadoSesion.aplazos;
+			ultimoAplazosValido = validarAplazos(elementos.aplazos.value) ? elementos.aplazos.value : 0;
 			actualizarPromedio();
 		} catch (error) {
 			console.error('Error buscando alumno:', error.message);
+			FCEGraph.notificaciones.error('Ocurrió un error al buscar el alumno.');
 		}
 	}
 
 	async function guardarAlumno() {
 		const registro = elementos.registro.value;
-		if (!validarRegistro(registro)) return;
+		if (!validarRegistro(registro)) {
+			elementos.registro.value = "";
+			FCEGraph.notificaciones.advertencia('Ingresá un número de registro válido para guardar.');
+			return;
+		}
 
 		const payload = generarPayloadAlumno();
 
@@ -273,20 +306,25 @@ FCEGraph.app = (function () {
 			const respuestaBusqueda = await fetch(`${FCEGraph.URL_BASE_API}/alumnos/registro/${registro}`);
 
 			if (respuestaBusqueda.ok) {
-				await fetch(`${FCEGraph.URL_BASE_API}/alumnos/registro/${registro}`, {
+				const respuestaGuardado = await fetch(`${FCEGraph.URL_BASE_API}/alumnos/registro/${registro}`, {
 					method: 'PUT',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(payload)
 				});
+				if (!respuestaGuardado.ok) throw new Error('No se pudo actualizar el registro.');
+				FCEGraph.notificaciones.exito('Los cambios se guardaron correctamente.');
 			} else {
-				await fetch(`${FCEGraph.URL_BASE_API}/alumnos`, {
+				const respuestaGuardado = await fetch(`${FCEGraph.URL_BASE_API}/alumnos`, {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(payload)
 				});
+				if (!respuestaGuardado.ok) throw new Error('No se pudo crear el registro.');
+				FCEGraph.notificaciones.exito('El registro se creó correctamente.');
 			}
 		} catch (error) {
 			console.error('Error guardando alumno:', error.message);
+			FCEGraph.notificaciones.error('Ocurrió un error al guardar el alumno.');
 		}
 	}
 
@@ -294,12 +332,43 @@ FCEGraph.app = (function () {
 		const registro = elementos.registro.value;
 		if (registro === "") return;
 
-		try {
-			await fetch(`${FCEGraph.URL_BASE_API}/alumnos/registro/${registro}`, { method: 'DELETE' });
+		if (!validarRegistro(registro)) {
 			elementos.registro.value = "";
+			FCEGraph.notificaciones.advertencia('Ingresá un número de registro válido para eliminar.');
+			return;
+		}
+
+		const confirmado = window.confirm(`¿Seguro que querés eliminar el registro ${registro}? Esta acción no se puede deshacer.`);
+		if (!confirmado) return;
+
+		try {
+			const respuestaBusqueda = await fetch(`${FCEGraph.URL_BASE_API}/alumnos/registro/${registro}`);
+			if (!respuestaBusqueda.ok) {
+				FCEGraph.notificaciones.advertencia(`No se encontró ningún alumno con el registro ${registro}.`);
+				return;
+			}
+
+			const respuestaBorrado = await fetch(`${FCEGraph.URL_BASE_API}/alumnos/registro/${registro}`, { method: 'DELETE' });
+			if (!respuestaBorrado.ok) throw new Error('No se pudo eliminar el registro.');
+
+			// Limpiamos el estado de sesión asociado al alumno borrado.
+			elementos.registro.value = "";
+			elementos.aplazos.value = 0;
+			ultimoAplazosValido = 0;
+			FCEGraph.estadoSesion.registroActual = null;
+			FCEGraph.estadoSesion.carrerasDelAlumno = {};
+			FCEGraph.estadoSesion.aplazos = 0;
+
+			// Recargamos el graph de la carrera actual, sin nada pintado.
 			await datos.cargarCarrera(elementos.opciones.value);
+			elementos.detalles.classList.remove("has-selection");
+			mostrarElementosDeClase("subject-actions", "none");
+			actualizarPromedio();
+
+			FCEGraph.notificaciones.exito('El registro se eliminó correctamente.');
 		} catch (error) {
 			console.error('Error eliminando alumno:', error.message);
+			FCEGraph.notificaciones.error('Ocurrió un error al eliminar el alumno.');
 		}
 	}
 
@@ -324,9 +393,12 @@ FCEGraph.app = (function () {
 
 		elementos.aplazos.addEventListener('change', () => {
 			if (validarAplazos(elementos.aplazos.value)) {
+				ultimoAplazosValido = elementos.aplazos.value;
 				actualizarPromedio();
 			} else {
-				elementos.aplazos.value = "";
+				elementos.aplazos.value = ultimoAplazosValido;
+				FCEGraph.notificaciones.advertencia('Ingresá una cantidad de aplazos válida.');
+				actualizarPromedio();
 			}
 		});
 
@@ -370,20 +442,26 @@ FCEGraph.app = (function () {
 
 		diagrama.instancia.addDiagramListener("BackgroundSingleClicked", () => {
 			elementos.detalles.classList.remove("has-selection");
+			datos.limpiarMateriaSeleccionada();
 		});
 
 		diagrama.instancia.addDiagramListener("ObjectSingleClicked", (e) => {
 			const nodoClickeado = e.subject.part;
 			if (!nodoClickeado || !nodoClickeado.data) return;
 
-			mostrarElementosDeClase("subject-actions", nodoClickeado.data.nota !== "" ? "flex" : "none");
+			// Toda la data de la materia se centraliza en un único objeto
+			// (datos.materiaSeleccionada); la UI se pinta a partir de él en
+			// vez de leer campos sueltos del nodo de GoJS en cada lugar.
+			const materia = datos.establecerMateriaSeleccionada(nodoClickeado);
+
+			mostrarElementosDeClase("subject-actions", materia.nota !== "" ? "flex" : "none");
 
 			elementos.detalles.classList.add("has-selection");
-			elementos.materia.innerText = nodoClickeado.data.text;
+			elementos.materia.innerText = materia.nombre;
 			elementos.materia.style.fontWeight = "bold";
-			elementos.hsSemanales.innerText = nodoClickeado.data.hs_semanales;
-			elementos.departamento.innerText = nodoClickeado.data.depto;
-			elementos.nota.value = nodoClickeado.data.nota;
+			elementos.hsSemanales.innerText = materia.hsSemanales;
+			elementos.departamento.innerText = materia.departamento;
+			elementos.nota.value = materia.nota;
 			elementos.nota.focus();
 		});
 
@@ -399,10 +477,10 @@ FCEGraph.app = (function () {
 
 		mostrarElementosDeClase("subject-actions", "none");
 		elementos.detalles.classList.remove("has-selection");
+		elementos.aplazos.value = 0;
 
 		// elementos.opciones.value = "LA";
 		// datos.cargarCarrera("LA");
-
 		datos.cargarCarrera(elementos.opciones.value);
 	}
 
